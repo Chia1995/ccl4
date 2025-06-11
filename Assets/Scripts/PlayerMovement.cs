@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 5f;               // Current speed (interpolated)
     [SerializeField] private float targetSpeed = 5f;         // Target speed (increased when collecting items)
     [SerializeField] private float smoothSpeedLerp = 2f;     // How quickly speed moves toward targetSpeed
+    [SerializeField] private float maxSpeed = 10f;          // Maximum speed the player can reach
+
 
     [SerializeField] private Rigidbody rb;                   // Reference to the Rigidbody for physics-based movement
 
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
 
     // Amount to increase speed per score point
-    [SerializeField] public float speedIncreasePerPoint = 0.1f;
+    [SerializeField] public float speedIncreasePerPoint = 0.01f;
 
     private void Awake()
     {
@@ -115,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
     // Called externally to increase how fast the player should move
     public void IncreaseTargetSpeed(float amount)
     {
-        targetSpeed += amount;
+        targetSpeed = Mathf.Min(targetSpeed + amount, maxSpeed);
     }
+
 }

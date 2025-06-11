@@ -561,6 +561,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &744214973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744214975}
+  - component: {fileID: 744214974}
+  m_Layer: 0
+  m_Name: MagnetSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &744214974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744214973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff32f9085fabae14db801cfa21711995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetPrefab: {fileID: 3276828862087072298, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+    type: 3}
+  spawnInterval: 20
+  minX: -2
+  maxX: 2
+  minZOffset: 20
+  maxZOffset: 40
+  yPosition: 1
+--- !u!4 &744214975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744214973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &822143731
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,9 +902,10 @@ GameObject:
   - component: {fileID: 1312694061}
   - component: {fileID: 1312694060}
   - component: {fileID: 1312694059}
+  - component: {fileID: 1312694065}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -872,6 +925,7 @@ MonoBehaviour:
   speed: 10
   targetSpeed: 5
   smoothSpeedLerp: 2
+  maxSpeed: 10
   rb: {fileID: 1312694060}
   horizontalMultiplier: 1.7
   jumpForce: 750
@@ -994,6 +1048,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1312694065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312694058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0fb50a14274724091cf725dc7ab8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attractionRadius: 5
+  attractionSpeed: 10
 --- !u!1 &1458464334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,6 +1241,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57518982973ddc942b5a15494c2bb301, type: 3}
+--- !u!1001 &5407258856659408202
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276828862087072298, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_Name
+      value: MagnetPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276828862087072298, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30a4410f888a0724cb63ed22e92b2c2e, type: 3}
 --- !u!1001 &5781363779908314943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1264,6 +1405,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2045753872739573507, guid: fe0984da398b0634c950ff46f565c471,
+        type: 3}
+      propertyPath: m_TagString
+      value: Collectibles
+      objectReference: {fileID: 0}
     - target: {fileID: 7864692102676451782, guid: fe0984da398b0634c950ff46f565c471,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1335,3 +1481,5 @@ SceneRoots:
   - {fileID: 1079428899}
   - {fileID: 317149117}
   - {fileID: 727323017}
+  - {fileID: 5407258856659408202}
+  - {fileID: 744214975}
