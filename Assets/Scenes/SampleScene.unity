@@ -598,6 +598,10 @@ MonoBehaviour:
   minZOffset: 20
   maxZOffset: 40
   yPosition: 1
+  checkRadius: 1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &744214975
 Transform:
   m_ObjectHideFlags: 0
@@ -1168,6 +1172,99 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3943846861236283366
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490846619569055296, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970466328760640032, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_Name
+      value: MagnetPickupEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970466328760640032, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829943749406020125, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829943749406020125, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829943749406020125, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829943749406020125, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe7e2e3baba458445a42a3850145eeb8, type: 3}
 --- !u!1001 &5299706531171990923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1483,3 +1580,4 @@ SceneRoots:
   - {fileID: 727323017}
   - {fileID: 5407258856659408202}
   - {fileID: 744214975}
+  - {fileID: 3943846861236283366}
