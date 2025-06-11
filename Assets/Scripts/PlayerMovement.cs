@@ -1,140 +1,120 @@
-/*using UnityEngine;
-using UnityEngine.SceneManagement;
-
-public class PlayerMovement : MonoBehaviour
-{
-
-    bool alive = true;
-
-    public float speed = 5;
-    [SerializeField] Rigidbody rb;
-
-    float horizontalInput;
-    [SerializeField] float horizontalMultiplier = 2;
-
-    [SerializeField] float jumpForce = 400f;
-
-    [SerializeField] LayerMask groundMask;
-
-    // Speed increase per point collected
-    public float speedIncreasePerPoint = 0.1f;
-
-
-    private void FixedUpdate()
-    {
-        if (!alive) return;
-
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
-        rb.MovePosition(rb.position + forwardMove + horizontalMove);
-    }
-
-    private void Update()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        // Check for jump input
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
-        {
-            Jump();
-        }
-
-        if (transform.position.y < -5)
-        {
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-        alive = false;
-        // Restart the game
-        Invoke("Restart", 2);
-    }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    void Jump()
-    {
-        // Check if the player is grounded before allowing a jump
-        float height = GetComponent<Collider>().bounds.size.y;
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
-
-        // If the player is grounded, apply a jump force
-        if (isGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce);
-        }
-    }
-}
-*/
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    bool alive = true;
+    // Input system reference for managing player controls
+    private PlayerInputActions inputActions;
 
-    [SerializeField] public float speed = 5f;
-    [SerializeField] private Rigidbody rb;
+    // Stores horizontal movement input
+    private Vector2 inputVector;
 
-    float horizontalInput;
+    // Indicates if the player is alive
+    private bool alive = true;
+
+    // Movement speed values
+    [SerializeField] private float speed = 5f;               // Current speed (interpolated)
+    [SerializeField] private float targetSpeed = 5f;         // Target speed (increased when collecting items)
+    [SerializeField] private float smoothSpeedLerp = 2f;     // How quickly speed moves toward targetSpeed
+
+    [SerializeField] private Rigidbody rb;                   // Reference to the Rigidbody for physics-based movement
+
+    // Horizontal movement multiplier and jump strength
     [SerializeField] private float horizontalMultiplier = 2f;
     [SerializeField] private float jumpForce = 400f;
 
+    // Ground detection
     [SerializeField] private LayerMask groundMask;
 
-    // Speed increase per healthy mushroom
+    // Amount to increase speed per score point
     [SerializeField] public float speedIncreasePerPoint = 0.1f;
+
+    private void Awake()
+    {
+        // Initialize the input system and bind the jump action
+        inputActions = new PlayerInputActions();
+        inputActions.Gameplay.Jump.performed += ctx => Jump();
+    }
+
+    private void OnEnable()
+    {
+        // Enable gameplay actions and subscribe to movement input
+        inputActions.Gameplay.Enable();
+        inputActions.Gameplay.Move.performed += OnMove;
+        inputActions.Gameplay.Move.canceled += OnMove;
+    }
+
+    private void OnDisable()
+    {
+        // Clean up input bindings
+        inputActions.Gameplay.Move.performed -= OnMove;
+        inputActions.Gameplay.Move.canceled -= OnMove;
+        inputActions.Gameplay.Disable();
+    }
+
+    // Reads movement input
+    private void OnMove(InputAction.CallbackContext context)
+    {
+        inputVector = context.ReadValue<Vector2>();
+    }
 
     private void FixedUpdate()
     {
         if (!alive) return;
 
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
+        // Smoothly interpolate current speed toward target speed
+        speed = Mathf.Lerp(speed, targetSpeed, smoothSpeedLerp * Time.fixedDeltaTime);
 
+        // Forward movement (always moving forward)
+        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+
+        // Horizontal movement (left/right input)
+        Vector3 horizontalMove = transform.right * inputVector.x * speed * Time.fixedDeltaTime * horizontalMultiplier;
+
+        // Apply movement to the Rigidbody
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
 
     private void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
-        {
-            Jump();
-        }
-
+        // If the player falls off the map, trigger death
         if (transform.position.y < -5)
         {
             Die();
         }
     }
 
+    // Handles player death
     public void Die()
     {
         alive = false;
-        Invoke("Restart", 2);
+        Invoke(nameof(Restart), 2f); // Restart scene after delay
     }
 
-    void Restart()
+    // Reloads the current scene
+    private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void Jump()
+    // Handles jumping if the player is grounded
+    private void Jump()
     {
         float height = GetComponent<Collider>().bounds.size.y;
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
+
+        // Cast a ray downward to check if the player is on the ground
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2f) + 0.1f, groundMask);
 
         if (isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce);
         }
+    }
+
+    // Called externally to increase how fast the player should move
+    public void IncreaseTargetSpeed(float amount)
+    {
+        targetSpeed += amount;
     }
 }
