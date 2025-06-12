@@ -103,10 +103,8 @@ public class PlayerMovement : MonoBehaviour
     // Handles jumping if the player is grounded
     private void Jump()
     {
-        float height = GetComponent<Collider>().bounds.size.y;
-
         // Cast a ray downward to check if the player is on the ground
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2f) + 0.1f, groundMask);
+        bool isGrounded = Physics.Raycast(transform.position + new Vector3(0,0.1f,0), Vector3.down, 0.15f, groundMask);
 
         if (isGrounded)
         {
