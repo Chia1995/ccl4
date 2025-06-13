@@ -1,32 +1,78 @@
 # CCL4 - Game "Don't Die High"
+ 
+# 1. Feature Description (What the Game Does)
 
-## System Design
+## Core Gameplay:
+- Auto-Runner Platformer: Player runs forward at a constant speed.
+- Controls: Left, Right, Jump.
+ 
+Difficulty Progression:
+- Player speed increases over time or distance (method TBD).
+ 
+Obstacles: 
+- Mushroom 1 → -10 lifepoints
+- Mushroom 2 → -30 lifepoints
+- Mushroom 3 → -random(0–80) lifepoints
+- Wall → -5 lifepoints and triggers stumble animation
+ 
+Collectibles:
+- Heart → restores +20 lifepoints (up to 100 max)
 
-The game consists of three main scenes: **Startscreen**, **Playscreen**, and **Gameoverscreen**. Each scene represents a distinct state of the game flow and is managed through a central game controller. The core mechanics revolve around real-time obstacle interaction, life point management, and gradual difficulty scaling.
+Scene Flow:
+- Startscreen → press Start → loads Playscreen
+- Playscreen: player auto-runs, interacts with obstacles/collectibles
+- Gameoverscreen: triggered when lifepoints = 0
+ 
+ 
+# 2. System Design
+ 
+Player System:
+- Movement
+- Health System
+- Speed Increase
 
-### Startscreen
-- Displays the player and a “Start” button.
-- Upon clicking the Start button, the game transitions to the Playscreen.
+ 
+Collision Logic:
+- All obstacle/collectible collisions use triggers or colliders.
+- Mushroom 3 triggers both:
+- Wall also triggers a stumble animation.
 
-### Playscreen
-- The player character auto-runs forward.
-- Speed increases over time or based on distance covered (to be defined).
-- Obstacles (mushrooms, trees) are dynamically spawned.
-- Collision with mushrooms reduces the player's lifepoints:
-  - Mushroom 1: -10
-  - Mushroom 2: -30
-  - Mushroom 3: takes - random lifepoints between 0 to 80
-- Collisions with walls (trees):
-  - -5 lifepoints
-  - Triggers a stumble animation
-- Hearts can be collected to regain lifepoints.
-- If lifepoints drop below 20:
-  - A death character appears (animation only; no gameplay effect).
-- **Game Over** is triggered when lifepoints reach 0.
+ 
+Visual Effects:
+- Death Character appears only after hitting Mushroom 3, not based on HP threshold.
+- No direct gameplay effect — only visual.
+ 
+ 
+## 3. System Infrastructure 
+ 
+Scenes:
+Startscreen, Playscreen, Gameoverscreen
+Managed via SceneManager.LoadScene("SceneName")
 
-### Gameoverscreen
-- Displays a “Game Over” message.
-- Shows the player’s score (e.g., meters run or total time).
-- Offers a button to restart the game and return to the Startscreen.
+Scripts: 
+- GameManager (singleton) → tracks lifepoints, game state transitions
+- PlayerMovement → handles input and physics
+- ObstacleHandler or per-obstacle logic → processes collisions and HP deduction
+- HeartPickup → restores HP on collection
+- VisualEffectsController → triggers death character animation
 
-## System Infrastructure
+UI:
+- HP bar: probably Slider or Image.fillAmount
+- Heart/lifepoint visuals in Playscreen
+- Possibly uses Unity’s new Input System (TBD)
+ 
+Audio & Animations:
+- Animation: running, jump, stumble, death character appear
+- Audio: pickup, hit, ambient sounds
+ 
+HP loss
+- Visual “Death Character” animation (regardless of final HP)
+- Implemented (method not yet confirmed).
+- Starts at 100 HP.
+- Decreases with obstacle hits.
+- Increases with heart pickups (+20 HP, max 100).
+- Game over when HP reaches 0.
+- Forward movement is automatic.
+- Left/Right and Jump are player-controlled.
+- ⚠️ Also triggers Death Character appearance (visual only; no gameplay effect)
+ 
