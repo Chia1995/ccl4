@@ -43,7 +43,7 @@ Visual Effects:
 - No direct gameplay effect — only visual.
  
  
-## 3. System Infrastructure 
+# 3. System Infrastructure 
  
 Scenes:
 Startscreen, Playscreen, Gameoverscreen
@@ -74,5 +74,5 @@ HP loss
 - Game over when HP reaches 0.
 - Forward movement is automatic.
 - Left/Right and Jump are player-controlled.
-- ⚠️ Also triggers Death Character appearance (visual only; no gameplay effect)
+- Also triggers Death Character appearance (visual only; no gameplay effect)
  
