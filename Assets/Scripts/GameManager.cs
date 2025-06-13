@@ -1,5 +1,7 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -7,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     // UI text to display the score
-    [SerializeField] private Text scoreText = null;
+    [SerializeField] private TextMeshProUGUI scoreText = null;
 
     // Reference to the PlayerMovement script to update speed
     [SerializeField] private PlayerMovement playerMovement = null;
