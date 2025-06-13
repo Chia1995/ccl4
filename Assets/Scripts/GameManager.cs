@@ -56,8 +56,21 @@ public class GameManager : MonoBehaviour
     // Called automatically when a new scene is loaded
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
     {
+        // Reset the score when the scene loads
+        score = 0;
+
         // Find and reassign the PlayerMovement reference
         playerMovement = FindObjectOfType<PlayerMovement>();
+
+        // Find and reassign the ScoreText reference
+        if (scoreText == null)
+        {
+            GameObject scoreObj = GameObject.Find("ScoreText");
+            if (scoreObj != null)
+            scoreText = scoreObj.GetComponent<TMPro.TextMeshProUGUI>();
+        }
+
+        UpdateScoreUI(); // Refresh the UI after reassignment
     }
 
     // Adds to the player's score and increases movement speed accordingly
@@ -75,10 +88,17 @@ public class GameManager : MonoBehaviour
 
     // Updates the on-screen score UI
     private void UpdateScoreUI()
+{
+    if (scoreText != null)
     {
-        if (scoreText != null)
-        {
-            scoreText.text = $"Score: {score}";
-        }
+        scoreText.text = $"Score: {score}";
+        Debug.Log($"ScoreText updated: {scoreText.text}");
+        scoreText.enabled = true; // Make sure it's enabled
     }
+    else
+    {
+        Debug.LogWarning("ScoreText reference missing!");
+    }
+}
+
 }
