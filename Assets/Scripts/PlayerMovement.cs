@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Animator animator;
+
     // Input system reference for managing player controls
     private PlayerInputActions inputActions;
 
@@ -34,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
+
+
         // Initialize the input system and bind the jump action
         inputActions = new PlayerInputActions();
         inputActions.Gameplay.Jump.performed += ctx => Jump();
@@ -104,12 +109,13 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         // Cast a ray downward to check if the player is on the ground
-        bool isGrounded = Physics.Raycast(transform.position + new Vector3(0,0.1f,0), Vector3.down, 0.15f, groundMask);
+         bool isGrounded = Physics.Raycast(transform.position + new Vector3(0, 0.1f, 0), Vector3.down, 0.15f, groundMask);
 
-        if (isGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce);
-        }
+    if (isGrounded)
+    {
+        rb.AddForce(Vector3.up * jumpForce);
+        animator.SetTrigger("Jump");  // s tells the Animator to play JumpAnimation
+    }
     }
 
     // Called externally to increase how fast the player should move
