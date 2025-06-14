@@ -1,20 +1,19 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private TextMeshProUGUI scoreText = null;
-    [SerializeField] private TextMeshProUGUI finalScoreText = null;
-    [SerializeField] private GameObject gameOverPanel = null;
     [SerializeField] private PlayerMovement playerMovement = null;
 
     private int score = 0;
     private int hitCount = 0;
     private bool isGameOver = false;
+
+    public static int LastScore { get; private set; } // Used to show final score in GameOverScene
 
     private void Awake()
     {
@@ -46,30 +45,24 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+   
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+{
+    // Reset game state ONLY if we're not in the GameOverScene
+    if (scene.name != "GameOverScene")
     {
-        if (playerMovement == null)
-            playerMovement = FindObjectOfType<PlayerMovement>();
+        isGameOver = false;
 
-        if (scoreText == null)
-        {
-            GameObject scoreObj = GameObject.Find("ScoreText");
-            if (scoreObj != null)
-                scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
-        }
+        playerMovement = FindObjectOfType<PlayerMovement>();
 
-        if (finalScoreText == null)
-        {
-            GameObject finalScoreObj = GameObject.Find("FinalScoreText");
-            if (finalScoreObj != null)
-                finalScoreText = finalScoreObj.GetComponent<TextMeshProUGUI>();
-        }
-
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(false);
+        GameObject scoreObj = GameObject.Find("ScoreText");
+        if (scoreObj != null)
+            scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
 
         UpdateScoreUI();
     }
+}
+
 
     public void AddScore(int amount = 1)
     {
@@ -96,7 +89,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Reload the current scene but keep score and hit count
+            // Reload current scene with retained state
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
@@ -105,33 +98,31 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         score = Mathf.Max(0, score);
-        Time.timeScale = 0f;
-
-        if (finalScoreText != null)
-            finalScoreText.text = $"Final Score: {score}";
-
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(true);
-
-        Debug.Log("Game Over. Final score: " + score);
+        LastScore = score;
+        Time.timeScale = 1f; // Just in case
+        SceneManager.LoadScene("GameOverScene");
     }
+
 
     public void RestartGame()
-    {
-        Time.timeScale = 1f;
-        isGameOver = false;
-        hitCount = 0;
-        score = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+{
+    // Destroy the current GameManager instance before reloading
+    Destroy(gameObject);
+    
+    Time.timeScale = 1f;
+    isGameOver = false;
+    hitCount = 0;
+    score = 0;
+    LastScore = 0;
+
+    SceneManager.LoadScene("MainGameScene");
+}
+
+
 
     public void QuitGame()
     {
         Time.timeScale = 1f;
-        isGameOver = false;
-        hitCount = 0;
-        score = 0;
-
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
