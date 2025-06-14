@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    public float DistanceTraveled => distanceTraveled;  // property to expose distance
     public InputAction moveAction;   // Assigned in Inspector (Vector2: X=left/right, Y=unused or W/S if desired)
     public InputAction jumpAction;   // Assigned in Inspector (Button: spacebar or other)
 
