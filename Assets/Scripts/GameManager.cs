@@ -1,25 +1,23 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 
 public class GameManager : MonoBehaviour
 {
-    // Singleton instance of the GameManager for global access
     public static GameManager Instance { get; private set; }
 
-    // UI text to display the score
     [SerializeField] private TextMeshProUGUI scoreText = null;
-
-    // Reference to the PlayerMovement script to update speed
+    [SerializeField] private TextMeshProUGUI finalScoreText = null;
+    [SerializeField] private GameObject gameOverPanel = null;
     [SerializeField] private PlayerMovement playerMovement = null;
 
-    // Internal score counter
     private int score = 0;
+    private int hitCount = 0;
+    private bool isGameOver = false;
 
     private void Awake()
     {
-        // Ensure only one GameManager exists (Singleton pattern)
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -27,78 +25,130 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Persist between scene loads
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        // Auto-assign PlayerMovement if not set in Inspector
         if (playerMovement == null)
-        {
             playerMovement = FindObjectOfType<PlayerMovement>();
-        }
 
-        UpdateScoreUI(); // Initialize score display
+        UpdateScoreUI();
     }
 
     private void OnEnable()
     {
-        // Subscribe to scene load event to reassign PlayerMovement on scene reload
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        // Unsubscribe to prevent memory leaks
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Called automatically when a new scene is loaded
-    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Reset the score when the scene loads
-        score = 0;
+        if (playerMovement == null)
+            playerMovement = FindObjectOfType<PlayerMovement>();
 
-        // Find and reassign the PlayerMovement reference
-        playerMovement = FindObjectOfType<PlayerMovement>();
-
-        // Find and reassign the ScoreText reference
         if (scoreText == null)
         {
             GameObject scoreObj = GameObject.Find("ScoreText");
             if (scoreObj != null)
-            scoreText = scoreObj.GetComponent<TMPro.TextMeshProUGUI>();
+                scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
         }
 
-        UpdateScoreUI(); // Refresh the UI after reassignment
+        if (finalScoreText == null)
+        {
+            GameObject finalScoreObj = GameObject.Find("FinalScoreText");
+            if (finalScoreObj != null)
+                finalScoreText = finalScoreObj.GetComponent<TextMeshProUGUI>();
+        }
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
+
+        UpdateScoreUI();
     }
 
-    // Adds to the player's score and increases movement speed accordingly
     public void AddScore(int amount = 1)
     {
         score += amount;
         UpdateScoreUI();
 
-        // Gradually increase player speed based on score
         if (playerMovement != null)
         {
             playerMovement.IncreaseTargetSpeed(playerMovement.speedIncreasePerPoint * amount);
         }
     }
 
-    // Updates the on-screen score UI
-    private void UpdateScoreUI()
-{
-    if (scoreText != null)
+    public void OnObstacleHit()
     {
-        scoreText.text = $"Score: {score}";
-        Debug.Log($"ScoreText updated: {scoreText.text}");
-        scoreText.enabled = true; // Make sure it's enabled
-    }
-    else
-    {
-        Debug.LogWarning("ScoreText reference missing!");
-    }
-}
+        if (isGameOver) return;
 
+        hitCount++;
+        score -= 20;
+        UpdateScoreUI();
+
+        if (score <= 0 || hitCount >= 3)
+        {
+            TriggerGameOver();
+        }
+        else
+        {
+            // Reload the current scene but keep score and hit count
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    private void TriggerGameOver()
+    {
+        isGameOver = true;
+        score = Mathf.Max(0, score);
+        Time.timeScale = 0f;
+
+        if (finalScoreText != null)
+            finalScoreText.text = $"Final Score: {score}";
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        Debug.Log("Game Over. Final score: " + score);
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        isGameOver = false;
+        hitCount = 0;
+        score = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1f;
+        isGameOver = false;
+        hitCount = 0;
+        score = 0;
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
+    private void UpdateScoreUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = $"Score: {score}";
+            scoreText.enabled = true;
+        }
+        else
+        {
+            Debug.LogWarning("ScoreText reference missing!");
+        }
+    }
 }
