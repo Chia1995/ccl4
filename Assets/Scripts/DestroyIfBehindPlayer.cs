@@ -1,3 +1,4 @@
+//// This script destroys the game object if it is positioned behind the player
 using UnityEngine;
 
 public class DestroyIfBehindPlayer : MonoBehaviour

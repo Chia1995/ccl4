@@ -1,3 +1,4 @@
+// This script handles the main menu UI interactions in Unity.
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

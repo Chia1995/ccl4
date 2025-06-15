@@ -1,3 +1,4 @@
+// This script handles the collision detection for obstacles in the game.
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour

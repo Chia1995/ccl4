@@ -1,3 +1,4 @@
+// This script handles player movement, jumping, and speed management in a Unity game.
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;

@@ -1,3 +1,4 @@
+// This script makes a villain follow the player until they are caught after 3 hits.
 using UnityEngine;
 
 public class VillainFollower : MonoBehaviour

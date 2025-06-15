@@ -1,3 +1,4 @@
+// This script handles the Game Over UI, displaying the final score and providing options to restart or quit the game.
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement; 

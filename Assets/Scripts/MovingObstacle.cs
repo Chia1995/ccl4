@@ -1,3 +1,4 @@
+// This script moves an obstacle side-to-side in a specified range at a constant speed.
 using UnityEngine;
 
 public class MovingObstacle : MonoBehaviour

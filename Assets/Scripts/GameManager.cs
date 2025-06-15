@@ -1,3 +1,4 @@
+// This script manages the game state, score, and player interactions in a Unity game.
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;

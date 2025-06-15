@@ -1,4 +1,4 @@
-// This script defines a ground tile in a 3D game, which can spawn obstacles and coins when the player exits the tile. It also handles the spawning of different types of obstacles based on a defined chance.
+// This script defines a ground tile in a 3D game, which can spawn obstacles and coins when the player exits the tile. It also handles the spawning of different types of obstacles based on a defined chance. 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
