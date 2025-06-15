@@ -54,21 +54,32 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+{
+    if (freshRestart)
     {
-        if (scene.name != "GameOverScene")
-        {
-            isGameOver = false;
-
-            playerMovement = FindObjectOfType<PlayerMovement>();
-
-            GameObject scoreObj = GameObject.Find("ScoreText");
-            if (scoreObj != null)
-                scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
-
-            UpdateScoreUI();
-        }
+        score = 0;
+        hitCount = 0;
+        freshRestart = false;
     }
+
+    if (scene.name != "GameOverScene")
+    {
+        isGameOver = false;
+
+        playerMovement = FindObjectOfType<PlayerMovement>();
+
+        GameObject scoreObj = GameObject.Find("ScoreText");
+        if (scoreObj != null)
+            scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
+        else
+            Debug.LogWarning("ScoreText object not found in the scene!");
+
+        UpdateScoreUI();
+    }
+}
+
 
     public void AddScore(int amount = 1)
     {
@@ -113,6 +124,11 @@ public class GameManager : MonoBehaviour
         // Flag for fresh start
         freshRestart = true;
         LastScore = 0;
+        hitCount = 0;
+        score = 0;
+
+        // Destroy the GameManager instance to reset state
+        Destroy(gameObject); 
 
         // Reload and let Start() handle reset
         SceneManager.LoadScene("MainGameScene");
