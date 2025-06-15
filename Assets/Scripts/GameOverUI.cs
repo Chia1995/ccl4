@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; 
 using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
@@ -8,19 +8,26 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI finalScoreText;
     [SerializeField] private Button restartButton;
     [SerializeField] private Button quitButton;
-
     private void Start()
     {
         finalScoreText.text = $"Final Score: {GameManager.LastScore}";
 
-        restartButton.onClick.AddListener(RestartGame);
+        restartButton.onClick.AddListener(OnRestartButtonClicked);
         quitButton.onClick.AddListener(QuitGame);
     }
 
-    private void RestartGame()
+    private void OnRestartButtonClicked()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainGameScene"); // Replace with your actual main game scene name
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.RestartGame(); // Call GameManager's restart logic
+        }
+        else
+        {
+            // Fallback in case GameManager is missing
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("MainGameScene");
+        }
     }
 
     private void QuitGame()
@@ -28,7 +35,7 @@ public class GameOverUI : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        Application.Quit();
+    Application.Quit();
 #endif
     }
 }
