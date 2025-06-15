@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Indicates if the player is alive
     private bool alive = true;
+    public float TargetSpeed => targetSpeed;
+    public float MaxSpeed => maxSpeed;
 
     // Movement speed values
     [SerializeField] private float speed = 5f;               // Current speed (interpolated)

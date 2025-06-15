@@ -1000,6 +1000,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 2888668636385842362, guid: d5ff90a56484c5e43a74f9b0e842c71d,
     type: 3}
   player: {fileID: 1101380401}
+  playerMovement: {fileID: 0}
   segmentLength: 1
   segmentsAhead: 5
 --- !u!4 &1412590204
@@ -1121,60 +1122,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2069882549
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2069882551}
-  - component: {fileID: 2069882550}
-  m_Layer: 0
-  m_Name: PickupSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2069882550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069882549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b466f84f28aedd34a886851ef4f79901, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 1101380402}
-  heartPrefab: {fileID: 2888668636385842362, guid: d5ff90a56484c5e43a74f9b0e842c71d,
-    type: 3}
-  mushroomPrefab: {fileID: 8408580506448019429, guid: e69aa17ea79573d41b591da5a2c3e160,
-    type: 3}
-  roadPrefab: {fileID: 395940223}
-  segmentLength: 1
-  player: {fileID: 61259020}
-  segmentsAhead: 3
-  roadWidth: 4
---- !u!4 &2069882551
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069882549}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65062714, y: 0.3878725, z: 4.9803996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2084125427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1205,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 747327357481501199, guid: f14eba803f5ab1a43876eb2f11e13583,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1950457023248265273, guid: f14eba803f5ab1a43876eb2f11e13583,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -1333,4 +1285,3 @@ SceneRoots:
   - {fileID: 1898826618}
   - {fileID: 5032809463395915736}
   - {fileID: 1412590204}
-  - {fileID: 2069882551}
