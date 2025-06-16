@@ -1,39 +1,4 @@
-/* using UnityEngine;
-
-public class MagnetSpawner : MonoBehaviour
-{
-    [SerializeField] private GameObject magnetPrefab;
-    [SerializeField] private float spawnInterval = 10f; // Seconds between spawns
-
-    // Define the bounds of your spawning area (e.g. lanes, horizontal/vertical limits)
-    [SerializeField] private float minX = -2f;
-    [SerializeField] private float maxX = 2f;
-    [SerializeField] private float minZOffset = 20f;
-    [SerializeField] private float maxZOffset = 40f;
-    [SerializeField] private float yPosition = 1f; // Y height where magnets spawn
-
-    private Transform player;
-
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        InvokeRepeating(nameof(SpawnMagnet), 5f, spawnInterval);
-    }
-
-    private void SpawnMagnet()
-    {
-        if (player == null || magnetPrefab == null) return;
-
-        // Randomize X and Z positions in front of the player
-        float randomX = Random.Range(minX, maxX);
-        float randomZ = Random.Range(minZOffset, maxZOffset);
-
-        Vector3 spawnPosition = new Vector3(randomX, yPosition, player.position.z + randomZ);
-        Instantiate(magnetPrefab, spawnPosition, Quaternion.identity);
-    }
-}
-*/
-
+// This script spawns magnets at random positions in front of the player, avoiding obstacles.
 using UnityEngine;
 
 public class MagnetSpawner : MonoBehaviour

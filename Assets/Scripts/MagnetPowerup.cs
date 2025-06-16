@@ -1,3 +1,4 @@
+// Description: Script to handle magnet power-up functionality in a game.
 using UnityEngine;
 
 public class MagnetPowerup : MonoBehaviour

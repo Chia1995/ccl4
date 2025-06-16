@@ -1,4 +1,5 @@
 // This script is responsible for spawning ground tiles in the game.
+// It instantiates ground tiles at specified spawn points and optionally spawns items like obstacles and coins on them.
 using UnityEngine;
 
 public class GroundSpawner : MonoBehaviour

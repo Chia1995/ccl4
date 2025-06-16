@@ -1,3 +1,5 @@
+// This script is part of the PlayerMagnet system in a Unity game.
+// It attracts collectibles within a specified radius towards the player when activated.
 using UnityEngine;
 
 public class PlayerMagnet : MonoBehaviour
