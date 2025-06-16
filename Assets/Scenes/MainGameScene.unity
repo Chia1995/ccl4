@@ -1781,6 +1781,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7152898873308584869, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: pickupEffectPrefab
+      value: 
+      objectReference: {fileID: 7970466328760640032, guid: fe7e2e3baba458445a42a3850145eeb8,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
