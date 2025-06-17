@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 1428478b70c7fa448a7ff4206c6f5dfe
     GuidInternal: 
-    m_lastTime: -8584514529930431908
-    List: []
+    m_lastTime: -8584514141719222313
+    List:
+    - name: test2_SoundBank
+      guid: 2a54818b88feec4fb5b84f101fa973f9
+      id: 2820596147
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1428478b70c7fa448a7ff4206c6f5dfe
+      - ElementName: test2_SoundBank
+        ObjectType: 7
+        guid: 2a54818b88feec4fb5b84f101fa973f9
+      Path: SoundBanks/Default Work Unit/test2_SoundBank
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,25 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: b5406c5e2744ac43b6aaf629fabb7ab2
     GuidInternal: 
-    m_lastTime: -8584514529930459741
-    List: []
+    m_lastTime: -8584514441461214141
+    List:
+    - name: Play_TestPoison
+      guid: 0de87f3c8576d34d94008d19bffce599
+      id: 3578776682
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b5406c5e2744ac43b6aaf629fabb7ab2
+      - ElementName: Play_TestPoison
+        ObjectType: 3
+        guid: 0de87f3c8576d34d94008d19bffce599
+      Path: Events/Default Work Unit/Play_TestPoison
+      maxAttenuation: 0
+      maxDuration: 2.00575
+      minDuration: 2.00575
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
@@ -139,7 +170,7 @@ MonoBehaviour:
     m_lastTime: -8584514529930424334
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 06000000070000000a0000000b0000000c000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

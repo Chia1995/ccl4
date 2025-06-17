@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}" SchemaVersion="123">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="TestPoison" ID="{182F1107-1420-4087-A9DE-E52913C52E4B}" ShortID="888871859">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{487CF5B2-63D0-4E8E-9681-8A4DC4B99585}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{434A3469-AD51-4137-856B-F85BFB1DEA93}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="TestPoison" ID="{329419A7-43BF-427D-8D25-9CEC9378C452}">
+							<Language>SFX</Language>
+							<AudioFile>TestPoison.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="602921037"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="TestPoison" ID="{329419A7-43BF-427D-8D25-9CEC9378C452}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
