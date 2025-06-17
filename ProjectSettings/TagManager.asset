@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Magnet
   - Collectibles
+  - HealthPickup
   layers:
   - Default
   - TransparentFX
