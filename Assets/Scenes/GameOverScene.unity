@@ -1196,6 +1196,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: villainAnimation
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: ad77bcc54b2301f4a89d0aca274bd218,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8c2b41303ecc5ef4aa76f10ce4c549c0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
