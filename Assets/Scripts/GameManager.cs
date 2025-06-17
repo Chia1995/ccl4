@@ -1,4 +1,4 @@
-// This script manages the game state, score, and player interactions in a Unity game.
+// This script manages the game state, score, lives (as hearts), and player interactions in a Unity game.
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private TextMeshProUGUI scoreText = null;
+    [SerializeField] private TextMeshProUGUI scoreText = null; // Reference to UI score text
     [SerializeField] private PlayerMovement playerMovement = null;
 
     private int score = 0;
@@ -15,11 +15,12 @@ public class GameManager : MonoBehaviour
     private bool isGameOver = false;
 
     public static int LastScore { get; private set; }
-    public int HitCount => hitCount; // Expose hit count for VillainFollower
+    public int HitCount => hitCount; // Public getter for use by other scripts
     private static bool freshRestart = false;
 
     private void Awake()
     {
+        // Singleton pattern to persist GameManager across scenes
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // Called on start to initialize score and hit count
     private void Start()
     {
         if (playerMovement == null)
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateScoreUI();
+        UpdateLivesUI(); // Initialize hearts on start
     }
 
     private void OnEnable()
@@ -55,33 +58,35 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-
+    // Called every time a new scene is loaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-{
-    if (freshRestart)
     {
-        score = 0;
-        hitCount = 0;
-        freshRestart = false;
+        if (freshRestart)
+        {
+            score = 0;
+            hitCount = 0;
+            freshRestart = false;
+        }
+
+        if (scene.name != "GameOverScene")
+        {
+            isGameOver = false;
+
+            playerMovement = FindObjectOfType<PlayerMovement>();
+
+            // Re-link score text UI from the new scene
+            GameObject scoreObj = GameObject.Find("ScoreText");
+            if (scoreObj != null)
+                scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
+            else
+                Debug.LogWarning("ScoreText object not found in the scene!");
+
+            UpdateScoreUI();
+            UpdateLivesUI(); // Update heart icons after scene load
+        }
     }
 
-    if (scene.name != "GameOverScene")
-    {
-        isGameOver = false;
-
-        playerMovement = FindObjectOfType<PlayerMovement>();
-
-        GameObject scoreObj = GameObject.Find("ScoreText");
-        if (scoreObj != null)
-            scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
-        else
-            Debug.LogWarning("ScoreText object not found in the scene!");
-
-        UpdateScoreUI();
-    }
-}
-
-
+    // Adds score and updates UI/speed
     public void AddScore(int amount = 1)
     {
         score += amount;
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Called when the player hits an obstacle
     public void OnObstacleHit()
     {
         if (isGameOver) return;
@@ -100,6 +106,7 @@ public class GameManager : MonoBehaviour
         hitCount++;
         score -= 20;
         UpdateScoreUI();
+        UpdateLivesUI();
 
         if (score <= 0 || hitCount >= 3)
         {
@@ -111,6 +118,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Ends the game and saves final score
     private void TriggerGameOver()
     {
         isGameOver = true;
@@ -120,21 +128,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOverScene");
     }
 
+    // Restarts the game from scratch
     public void RestartGame()
     {
-        // Flag for fresh start
         freshRestart = true;
         LastScore = 0;
         hitCount = 0;
         score = 0;
 
-        // Destroy the GameManager instance to reset state
-        Destroy(gameObject); 
-
-        // Reload and let Start() handle reset
+        Destroy(gameObject); // Reset singleton
         SceneManager.LoadScene("MainGameScene");
     }
 
+    // Quits the game or stops play mode in editor
     public void QuitGame()
     {
         Time.timeScale = 1f;
@@ -145,6 +151,7 @@ public class GameManager : MonoBehaviour
 #endif
     }
 
+    // Updates the score display
     private void UpdateScoreUI()
     {
         if (scoreText != null)
@@ -155,5 +162,12 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("ScoreText reference missing!");
         }
+    }
+
+    // Updates the heart-based lives UI (no text)
+    private void UpdateLivesUI()
+    {
+        // We're only using the LivesUI with heart icons now
+        FindObjectOfType<LivesUI>()?.UpdateLives(3 - hitCount);
     }
 }

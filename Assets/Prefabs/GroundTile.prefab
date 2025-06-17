@@ -195,11 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce23c12b4aedb8f498730a9fddbcf654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 1332549053260637691, guid: 813f42872543bcb49a4f4077ce2a8a5f,
+  obstaclePrefab: {fileID: 919132149155446097, guid: cbb327fda7d10cc4190878bc1b879674,
     type: 3}
   coinPrefab: {fileID: 2045753872739573507, guid: fe0984da398b0634c950ff46f565c471,
     type: 3}
-  obstacle2Prefab: {fileID: 8051511535444044143, guid: 4b063170733bad04da6e1c75004aa084,
+  obstacle2Prefab: {fileID: 919132149155446097, guid: 61e2b6a5cb3fe5c4295769325123ea50,
     type: 3}
   obstacle2SpawnChance: 0.2
 --- !u!1 &9114968898783302652
@@ -264,7 +264,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 131b911705e0c7d4798c844bba840f5c, type: 2}
+  - {fileID: 2100000, guid: 83ccd7d2458859043a4bffdc2fa663d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
