@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float smoothSpeedLerp = 2f;     // How quickly speed moves toward targetSpeed
     [SerializeField] private float maxSpeed = 10f;          // Maximum speed the player can reach
 
-
     [SerializeField] private Rigidbody rb;                   // Reference to the Rigidbody for physics-based movement
 
     // Horizontal movement multiplier and jump strength
@@ -38,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-
 
         // Initialize the input system and bind the jump action
         inputActions = new PlayerInputActions();
@@ -110,13 +108,13 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         // Cast a ray downward to check if the player is on the ground
-         bool isGrounded = Physics.Raycast(transform.position + new Vector3(0, 0.1f, 0), Vector3.down, 0.15f, groundMask);
+        bool isGrounded = Physics.Raycast(transform.position + new Vector3(0, 0.1f, 0), Vector3.down, 0.15f, groundMask);
 
-    if (isGrounded)
-    {
-        rb.AddForce(Vector3.up * jumpForce);
-        animator.SetTrigger("Jump");  // s tells the Animator to play JumpAnimation
-    }
+        if (isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce);
+            animator.SetTrigger("Jump");  // Tells the Animator to play JumpAnimation
+        }
     }
 
     // Called externally to increase how fast the player should move
@@ -124,5 +122,4 @@ public class PlayerMovement : MonoBehaviour
     {
         targetSpeed = Mathf.Min(targetSpeed + amount, maxSpeed);
     }
-
 }

@@ -1,6 +1,4 @@
 // This script defines a ground tile in a 3D game, which can spawn obstacles and coins when the player exits the tile. It also handles the spawning of different types of obstacles based on a defined chance. 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundTile : MonoBehaviour
@@ -10,26 +8,17 @@ public class GroundTile : MonoBehaviour
     [SerializeField] GameObject obstacle2Prefab;
     [SerializeField] float obstacle2SpawnChance = 0.2f; // Chance to spawn an obstacle
     GroundSpawner groundSpawner;
-    // Start is called before the first frame update
+
     void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
-        //SpawnObstacle();
-        //SpawnCoins();
-
     }
+
     private void OnTriggerExit(Collider other)
     {
         groundSpawner.SpawnTile(true);
         Destroy(gameObject, 2f); // Optional: Destroy the tile after a delay to avoid clutter
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     public void SpawnObstacle()
     {
@@ -47,9 +36,7 @@ public class GroundTile : MonoBehaviour
 
         // Instantiate the obstacle at the chosen position
         Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity, transform);
-
     }
-
 
     public void SpawnCoins()
     {
