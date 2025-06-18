@@ -4,8 +4,8 @@
 **Student ID:**  
 **BCC Group:**  
 **Name:**  
-- Milena Biasova
-- Christina Gamperl
+- Milena Biasova CC231001
+- Christina Gamperl CC231023
 - Augustine Onyirioha
 - Ecem Tasali
 
@@ -22,6 +22,8 @@
 ## Key Features and Implementation Detail
 
 ### 3D Modeling
+
+#### Made by Blender
 - Player  
     - Animation Idle, Run, Jump
 - Villain
@@ -30,12 +32,20 @@
     - Road
     - Flower
     - Tree
-    - Mushroom
+    - RedMushroom
 - Obstacles
-    - Walls
     - Mushroom
         - Animation Idle
-    - Magnet
+
+#### Unity Asset Store
+- 3D Gamekit - Environment Pack
+    - Ground, mushroom, trees, rocks and flowers used in `StartGame` scene and `GameOver`
+- FantasyEnvironments
+    - Ground, mushroom, trees, rocks and flowers used in `StartGame` scene and `GameOver`
+
+#### free3d.com
+- Magnet
+- Heart
 
 ### Game Audio
 - Item  
