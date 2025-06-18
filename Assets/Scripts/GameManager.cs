@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
         UpdateScoreUI();
         UpdateLivesUI(); // Initialize hearts on start
     }
-
+    // Update is called once per frame
+    // Check if player has fallen off the platform
     private void Update()
     {
         if (playerMovement != null && playerMovement.transform.position.y < -5f && !isGameOver)
