@@ -12,11 +12,27 @@
 
 ## 3D Models done by Blender
 - Player  
-    - Animation Idle, Run, Jump
+    
 <p float="left">
 <img src="Assets/Documents/Images/playerfront.png" height="300" width="200"/>
 <img src="Assets/Documents/Images/playerback.png" height="300"  width="200"/>
-<img src="Assets/Documents/Images/playerside.png" height="300"  width="200"/>
+<img src="Assets/Documents/Images/playerside.png" height="300"  width="180"/>
+</p>
+
+- Animation Idle
+<p float="left">
+<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
+<img src="Assets/Documents/Images/PlayerIdleSide.gif" width="200"/>
+</p>
+
+- Animation Run
+<p float="left">
+<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
+</p>
+
+- Animation Jump
+<p float="left">
+<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
 </p>
 
 - Villain
