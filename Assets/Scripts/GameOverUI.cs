@@ -17,7 +17,7 @@ public class GameOverUI : MonoBehaviour
         quitButton.onClick.AddListener(QuitGame);
     }
 
-    private void OnRestartButtonClicked()
+    public void OnRestartButtonClicked()
     {
         if (GameManager.Instance != null)
         {
@@ -31,12 +31,10 @@ public class GameOverUI : MonoBehaviour
         }
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-    Application.Quit();
-#endif
+        Time.timeScale = 1f; // In case the game was paused
+        SceneManager.LoadScene("StartGame"); // Make sure this matches your scene name exactly
     }
+   
 }
