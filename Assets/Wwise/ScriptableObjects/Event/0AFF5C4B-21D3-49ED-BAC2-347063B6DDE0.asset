@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c589b47bd9d58464fb36d90214abb635, type: 3}
-  m_Name: 8B81542A-FE88-4FEC-B5B8-4F101FA973F9
+  m_Script: {fileID: 11500000, guid: 2e1ec24611e6d444a9c9538ec9156651, type: 3}
+  m_Name: 0AFF5C4B-21D3-49ED-BAC2-347063B6DDE0
   m_EditorClassIdentifier: 
-  objectName: test2_SoundBank
-  id: 2820596147
-  guid: 8B81542A-FE88-4FEC-B5B8-4F101FA973F9
+  objectName: Play_Coin
+  id: 3114179205
+  guid: 0AFF5C4B-21D3-49ED-BAC2-347063B6DDE0
+  IsInUserDefinedSoundBank: 1
+  IsAutoBankLoaded: 0

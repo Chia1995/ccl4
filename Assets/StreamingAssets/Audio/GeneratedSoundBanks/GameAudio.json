@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "876814259",
+    "Type": "User",
+    "GUID": "{792D214E-0A9B-468F-B301-CD44C625770D}",
+    "Language": "SFX",
+    "Hash": "{ECAA2F2F-DAA2-5D05-372E-7B17EC853584}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\GameAudio",
+    "ShortName": "GameAudio",
+    "Path": "GameAudio.bnk",
+    "Media": [
+     {
+      "Id": "40044679",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Coin.wav",
+      "CachePath": "CF/{CFC549B5-DAF1-D7C2-71FA-B09EF29F8887}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3114179205",
+      "Name": "Play_Coin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Coin",
+      "GUID": "{0AFF5C4B-21D3-49ED-BAC2-347063B6DDE0}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7856875",
+      "DurationMax": "0.7856875",
+      "MediaRefs": [
+       {
+        "Id": "40044679"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{037C3C06-A45C-EE13-2135-2DF79C2BE87C}"
+ }
+}

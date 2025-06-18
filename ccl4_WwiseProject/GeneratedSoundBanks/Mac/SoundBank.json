@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1661994096",
+    "Type": "User",
+    "GUID": "{6E4A341E-D2D5-41E4-9F5F-12B7F044DC7A}",
+    "Language": "SFX",
+    "Hash": "{D8C162C6-BCBB-CD35-A7F6-4E05B8209A27}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundBank",
+    "ShortName": "SoundBank",
+    "Path": "SoundBank.bnk",
+    "Media": [
+     {
+      "Id": "40044679",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Coin.wav",
+      "CachePath": "37/{373A0E72-4877-047E-4CE5-320646508902}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3114179205",
+      "Name": "Play_Coin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Coin",
+      "GUID": "{0AFF5C4B-21D3-49ED-BAC2-347063B6DDE0}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.2953603",
+      "DurationMax": "0.2953603",
+      "MediaRefs": [
+       {
+        "Id": "40044679"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F4AA59E4-49E4-CBC5-594D-FF52F4CFCA32}"
+ }
+}

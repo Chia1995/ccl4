@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e1ec24611e6d444a9c9538ec9156651, type: 3}
-  m_Name: 3C7FE80D-7685-4DD3-9400-8D19BFFCE599
+  m_Script: {fileID: 11500000, guid: c589b47bd9d58464fb36d90214abb635, type: 3}
+  m_Name: 6E4A341E-D2D5-41E4-9F5F-12B7F044DC7A
   m_EditorClassIdentifier: 
-  objectName: Play_TestPoison
-  id: 3578776682
-  guid: 3C7FE80D-7685-4DD3-9400-8D19BFFCE599
-  IsInUserDefinedSoundBank: 1
-  IsAutoBankLoaded: 0
+  objectName: SoundBank
+  id: 1661994096
+  guid: 6E4A341E-D2D5-41E4-9F5F-12B7F044DC7A
