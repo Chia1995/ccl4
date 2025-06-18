@@ -14,9 +14,9 @@
 - Player  
     - Animation Idle, Run, Jump
 
-![PlayerFront](Assets/Documents/Images/playerfront.png)
-![PlayerBack](Assets/Documents/Images/playerback.png)
-![PlayerSide](Assets/Documents/Images/playerside.png)
+<img src="Assets/Documents/Images/playerfront.png" height="300" width="200"/>
+<img src="Assets/Documents/Images/playerback.png" height="300"  width="200"/>
+<img src="Assets/Documents/Images/playerside.png" height="300"  width="200"/>
 
 - Villain
     - Animation Run
