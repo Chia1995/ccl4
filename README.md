@@ -1,78 +1,88 @@
 # CCL4 - Game "Don't Die High"
  
-# 1. Feature Description (What the Game Does)
+# 1. Logo
 
-## Core Gameplay:
-- Auto-Runner Platformer: Player runs forward at a constant speed.
-- Controls: Left, Right, Jump.
- 
-Difficulty Progression:
-- Player speed increases over time or distance (method TBD).
- 
-Obstacles: 
-- Mushroom 1 → -10 lifepoints
-- Mushroom 2 → -30 lifepoints
-- Mushroom 3 → -random(0–80) lifepoints
-- Wall → -5 lifepoints and triggers stumble animation
- 
-Collectibles:
-- Heart → restores +20 lifepoints (up to 100 max)
+# 2. The Game
 
-Scene Flow:
-- Startscreen → press Start → loads Playscreen
-- Playscreen: player auto-runs, interacts with obstacles/collectibles
-- Gameoverscreen: triggered when lifepoints = 0
- 
- 
-# 2. System Design
- 
-Player System:
-- Movement
-- Health System
-- Speed Increase
+# 3. Motivation
 
- 
-Collision Logic:
-- All obstacle/collectible collisions use triggers or colliders.
-- Mushroom 3 triggers both:
-- Wall also triggers a stumble animation.
+# 4. 3D Modeling and Animation
 
- 
-Visual Effects:
-- Death Character appears only after hitting Mushroom 3, not based on HP threshold.
-- No direct gameplay effect — only visual.
- 
- 
-# 3. System Infrastructure 
- 
-Scenes:
-Startscreen, Playscreen, Gameoverscreen
-Managed via SceneManager.LoadScene("SceneName")
+## 3D Models done by Blender
+- Player  
+    - Animation Idle, Run, Jump
+- Villain
+    - Animation Run
+- Enviroment
+    - Road
+    - Flower
+    - Tree
+    - RedMushroom
+- Obstacles
+    - Mushroom
+        - Animation Idle
+## Unity Asset Store
+- 3D Gamekit - Environment Pack
+    - Ground, mushroom, trees, rocks and flowers used in `StartGame` scene and `GameOver`
+- FantasyEnvironments
+    - Ground, mushroom, trees, rocks and flowers used in `StartGame` scene and `GameOver`
 
-Scripts: 
-- GameManager (singleton) → tracks lifepoints, game state transitions
-- PlayerMovement → handles input and physics
-- ObstacleHandler or per-obstacle logic → processes collisions and HP deduction
-- HeartPickup → restores HP on collection
-- VisualEffectsController → triggers death character animation
+## free3d.com
+- Magnet
+- Heart
 
-UI:
-- HP bar: probably Slider or Image.fillAmount
-- Heart/lifepoint visuals in Playscreen
-- Possibly uses Unity’s new Input System (TBD)
- 
-Audio & Animations:
-- Animation: running, jump, stumble, death character appear
-- Audio: pickup, hit, ambient sounds
- 
-HP loss
-- Visual “Death Character” animation (regardless of final HP)
-- Implemented (method not yet confirmed).
-- Starts at 100 HP.
-- Decreases with obstacle hits.
-- Increases with heart pickups (+20 HP, max 100).
-- Game over when HP reaches 0.
-- Forward movement is automatic.
-- Left/Right and Jump are player-controlled.
-- Also triggers Death Character appearance (visual only; no gameplay effect)
- 
+## Scenes
+
+# 5. Game Audio
+
+# 6. System Design
+
+# 7. System Infrastructure
+
+# 8. How to run the program (User guideline)
+
+## 1️⃣ Requirements
+- Unity version: 2022.3.59fi
+- Platform: Windows
+- Input device: Keyboard
+
+---
+
+## 2️⃣ Setup Instructions
+1. Download ZIP folder and extract it.
+2. Open the project in **Unity Hub** and select the correct Unity version.
+3. In Unity, open the scene:
+   - `StartGame` (main menu scene)
+4. Check that the build settings are correct:
+   - Go to `File > Build Settings`
+   - Ensure your all 3 scenes are in the build list.
+      - `StartGame` (main menu scene)
+      - `MainGameScene` (main menu scene)
+      - `GameOverScene` (main menu scene)
+---
+
+## 3️⃣ How to Play
+- **Movement:** Use `A` to move to the right and `D` to move to the left
+- **Jump:** Press `Spacebar` to jump.
+- **Collect items:** Collect coins to get a score, collect magnet to get all nearby coins automatically
+- **Avoid obstacles:** Avoid walls and mushrooms. (loose hearts)
+
+---
+
+## 4️⃣ Run the Program
+- Press the **Play** button in Unity editor to start.
+- Or build the game:
+  1. Go to `File > Build Settings`
+  2. Select your platform (e.g., PC, Mac)
+  3. Click **Build and Run**
+
+---
+
+## 5️⃣ Exiting
+- Press the **Quit** button in the game over scene to return to the Main menu scene `StartGame`. In this scene you click "Exit Game" to close the application.
+
+---
+
+## 6️⃣ Notes
+- The game is designed for fullscreen, but works in windowed mode.
+- For best experience, play in 16:9 resolution.
