@@ -1393,6 +1393,62 @@ RectTransform:
   m_AnchoredPosition: {x: -120, y: -60}
   m_SizeDelta: {x: 208.13531, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1190093750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1190093752}
+  - component: {fileID: 1190093753}
+  m_Layer: 0
+  m_Name: LifeMushroomSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1190093752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190093750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 433.24268, y: 135.51299, z: -0.85295653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1190093753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190093750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03566c70a0f95374ebe549a8af10680f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeMushroomPrefab: {fileID: 6937471173198333157, guid: 9737045a666553d47914efc0cd9e8a62,
+    type: 3}
+  spawnInterval: 30
+  minX: -2
+  maxX: 2
+  minZOffset: 20
+  maxZOffset: 40
+  yPosition: 4
+  checkRadius: 1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1312694058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,12 +2149,12 @@ PrefabInstance:
     - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.354
       objectReference: {fileID: 0}
     - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.298
       objectReference: {fileID: 0}
     - target: {fileID: 210051160317209592, guid: 30a4410f888a0724cb63ed22e92b2c2e,
         type: 3}
@@ -2150,7 +2206,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5438801223845657646, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062422042241602318, guid: 30a4410f888a0724cb63ed22e92b2c2e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5438801223845657646, guid: 30a4410f888a0724cb63ed22e92b2c2e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2171,7 +2238,7 @@ PrefabInstance:
     - target: {fileID: 1332549053260637691, guid: 813f42872543bcb49a4f4077ce2a8a5f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1816633870596079425, guid: 813f42872543bcb49a4f4077ce2a8a5f,
         type: 3}
@@ -2237,6 +2304,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744030507761615111, guid: 813f42872543bcb49a4f4077ce2a8a5f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744030507761615111, guid: 813f42872543bcb49a4f4077ce2a8a5f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.013
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2322,6 +2399,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef4dc66bf7a77154480993c4cf0c273c, type: 3}
+--- !u!1001 &7979906481020554473
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.599
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.296
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669065962832694326, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937471173198333157, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_Name
+      value: LifeMushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937471173198333157, guid: 9737045a666553d47914efc0cd9e8a62,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9737045a666553d47914efc0cd9e8a62, type: 3}
 --- !u!1001 &9114221726980527274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2423,3 +2573,5 @@ SceneRoots:
   - {fileID: 638121715}
   - {fileID: 463305169}
   - {fileID: 5430239112569846762}
+  - {fileID: 7979906481020554473}
+  - {fileID: 1190093752}
