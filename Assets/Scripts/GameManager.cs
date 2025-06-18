@@ -48,6 +48,14 @@ public class GameManager : MonoBehaviour
         UpdateLivesUI(); // Initialize hearts on start
     }
 
+    private void Update()
+    {
+        if (playerMovement != null && playerMovement.transform.position.y < -5f && !isGameOver)
+        {
+            OnFallOffPlatform();
+        }
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -118,6 +126,13 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+    // Called when the player falls off the platform
+    // This is treated as an obstacle hit for simplicity
+    private void OnFallOffPlatform()
+    {
+        Debug.Log("Player fell off the platform!");
+        OnObstacleHit(); // Treat fall as a hit
+    }
 
     // Ends the game and saves final score
     private void TriggerGameOver()
@@ -183,4 +198,5 @@ public class GameManager : MonoBehaviour
         hitCount = Mathf.Max(0, hitCount - 1); // Reduce hitCount by 1 (restore 1 life)
         UpdateLivesUI(); // Update the heart icons
     }
+
 }
