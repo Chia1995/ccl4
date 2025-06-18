@@ -2,6 +2,8 @@
  
 # 1. Logo
 
+![Logo](Assets\Documents\logo.png)
+
 # 2. The Game
 
 # 3. Motivation
