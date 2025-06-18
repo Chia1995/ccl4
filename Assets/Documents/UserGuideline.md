@@ -3,7 +3,7 @@
 ## 1️⃣ Requirements
 - Unity version: 2022.3.59fi
 - Platform: Windows
-- Input device: Keyboard
+- Input system: Keyboard
 
 ---
 
@@ -23,8 +23,9 @@
 ## 3️⃣ How to Play
 - **Movement:** Use `A` to move to the right and `D` to move to the left
 - **Jump:** Press `Spacebar` to jump.
-- **Collect items:** Collect coins to get a score, collect magnet to get all nearby coins automatically
+- **Collect items:** Collect coins to get a score, collect magnet to get all nearby coins automatically, collect a heart to restore a life when you lose one.
 - **Avoid obstacles:** Avoid walls and mushrooms. (loose hearts)
+- **Avoid falling:** Stay on track and don't fall. (loose hearts)
 
 ---
 

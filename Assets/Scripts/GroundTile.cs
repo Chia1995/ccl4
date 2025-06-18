@@ -60,6 +60,27 @@ public class GroundTile : MonoBehaviour
             temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
         }
     }
+    /*public void SpawnCoins()
+    {
+        float[] laneXPositions = { -1.5f, 0f, 1.5f }; // Left, Center, Right lanes
+        int coinsToSpawn = 6; // Number of coins per tile
+        Collider tileCollider = GetComponent<Collider>();
+        float zStart = tileCollider.bounds.min.z;
+        float zEnd = tileCollider.bounds.max.z;
+        float zStep = (zEnd - zStart) / (coinsToSpawn - 1); // Evenly space coins
+
+        for (int i = 0; i < coinsToSpawn; i++)
+        {
+            int laneIndex = i % laneXPositions.Length; // Zigzag: left -> center -> right
+            float xPos = laneXPositions[laneIndex];
+            float zPos = zStart + (i * zStep);
+            Vector3 spawnPosition = new Vector3(xPos, 1f, zPos);
+
+            GameObject temp = Instantiate(coinPrefab, transform);
+            temp.transform.position = spawnPosition;
+        }
+    }*/
+    
 
     Vector3 GetRandomPointInCollider(Collider collider)
     {
