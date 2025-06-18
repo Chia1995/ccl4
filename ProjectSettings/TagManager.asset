@@ -7,7 +7,7 @@ TagManager:
   - Magnet
   - Collectibles
   - HealthPickup
-  - LifeMushroom
+  - LifeHeart
   layers:
   - Default
   - TransparentFX
