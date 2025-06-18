@@ -2,7 +2,7 @@
  
 # 1. Logo
 
-![Logo](Assets\Documents\logo.png)
+![Logo](Assets/Documents/Images/logo.png)
 
 # 2. The Game
 
