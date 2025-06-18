@@ -13,6 +13,11 @@
 ## 3D Models done by Blender
 - Player  
     - Animation Idle, Run, Jump
+
+![PlayerFront](Assets/Documents/Images/playerfront.png)
+![PlayerBack](Assets/Documents/Images/playerback.png)
+![PlayerSide](Assets/Documents/Images/playerside.png)
+
 - Villain
     - Animation Run
 - Enviroment
