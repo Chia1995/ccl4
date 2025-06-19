@@ -70,23 +70,25 @@ This game is an infinite runner where the player navigates forward across a seri
 <p float="left">
 <img src="Assets/Documents/Images/playerfront.png" height="300" width="200"/>
 <img src="Assets/Documents/Images/playerback.png" height="300"  width="200"/>
-<img src="Assets/Documents/Images/playerside.png" height="300"  width="180"/>
+<img src="Assets/Documents/Images/playerside.png" height="300"  width="170"/>
 </p>
 
 - Animation Idle
 <p float="left">
 <img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
-<img src="Assets/Documents/Images/PlayerIdleSide.gif" width="200"/>
+<img src="Assets/Documents/Images/PlayerIdleSide.gif" height="300" width="170"/>
 </p>
 
 - Animation Run
 <p float="left">
-<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
+<img src="Assets/Documents/Images/PlayerRunFront.gif" height="300" width="200"/>
+<img src="Assets/Documents/Images/PlayerRunSide.gif" height="300" width="300"/>
 </p>
 
 - Animation Jump
 <p float="left">
-<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
+<img src="Assets/Documents/Images/PlayerJumpFront.gif" height="300" width="200"/>
+<img src="Assets/Documents/Images/PlayerJumpSide.gif" height="300" width="200"/>
 </p>
 
 - Villain
@@ -217,13 +219,13 @@ The diagram below illustrates the core structure and class relationships within 
 1. Download the ZIP folder and extract it.
 2. Open the project in **Unity Hub** and select the correct Unity version.
 3. In Unity, open the scene:
-   - `StartGame` (main menu scene)
+   - `StartGame` (start menu scene)
 4. Check that the build settings are correct:
    - Go to `File > Build Settings`
    - Ensure all 3 scenes are in the build list.
-      - `StartGame` (main menu scene)
-      - `MainGameScene` (main menu scene)
-      - `GameOverScene` (main menu scene)
+      - `StartGame` (start menu scene)
+      - `MainGameScene` (game scene)
+      - `GameOverScene` (game over scene)
 ---
 
 ## 3️⃣ How to Play
