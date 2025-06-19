@@ -1,0 +1,9 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2837384057	Stop_Music			\Default Work Unit\Stop_Music	
+	2932040671	Play_Music			\Default Work Unit\Play_Music	
+	3114179205	Play_Coin			\Default Work Unit\Play_Coin	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	40044679	Coin	Y:\Workspace\Main_CCL4\ccl4\ccl4_WwiseProject\.cache\2A\{2ACBFD29-9393-5515-6145-253D54A6523A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Coin		28450
+	506943541	Music	Y:\Workspace\Main_CCL4\ccl4\ccl4_WwiseProject\.cache\27\{27961D48-BB12-E315-66CD-1450C6049347}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music		166122
+

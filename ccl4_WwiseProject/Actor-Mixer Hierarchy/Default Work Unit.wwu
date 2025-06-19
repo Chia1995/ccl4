@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="TestPoison" ID="{182F1107-1420-4087-A9DE-E52913C52E4B}" ShortID="888871859">
+					<PropertyList>
+						<Property Name="Inclusion" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{487CF5B2-63D0-4E8E-9681-8A4DC4B99585}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{434A3469-AD51-4137-856B-F85BFB1DEA93}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="TestPoison" ID="{329419A7-43BF-427D-8D25-9CEC9378C452}">
+							<Language>SFX</Language>
+							<AudioFile>TestPoison.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="602921037"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="TestPoison" ID="{329419A7-43BF-427D-8D25-9CEC9378C452}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Coin" ID="{24AAD323-4AE4-456E-8385-E0EC2F4424CF}" ShortID="729988724">
+					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{487CF5B2-63D0-4E8E-9681-8A4DC4B99585}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{434A3469-AD51-4137-856B-F85BFB1DEA93}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Coin" ID="{CA61941A-C4E0-4872-896A-D0945FEA8C69}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.490327202942636"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.490327202942636"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Coin.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="40044679"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Coin" ID="{CA61941A-C4E0-4872-896A-D0945FEA8C69}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Mushroom" ID="{B88ACABE-3207-4627-9D21-7CD52D6F9AEA}" ShortID="920401347">
+					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{487CF5B2-63D0-4E8E-9681-8A4DC4B99585}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{434A3469-AD51-4137-856B-F85BFB1DEA93}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Mushroom" ID="{5DDF5D4C-370B-4FBC-B33E-990712A9FE58}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.15995183216233"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Mushroom.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="857655020"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Mushroom" ID="{5DDF5D4C-370B-4FBC-B33E-990712A9FE58}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Music" ID="{323D0963-57EC-47F2-84A6-0AFA0CEB75DA}" ShortID="166896239">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{487CF5B2-63D0-4E8E-9681-8A4DC4B99585}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{434A3469-AD51-4137-856B-F85BFB1DEA93}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Music" ID="{04C5E505-F8E2-4708-9983-BD5728FF6793}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="1.24020862183404"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.96965462530313"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Music.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="506943541"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Music" ID="{04C5E505-F8E2-4708-9983-BD5728FF6793}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8B472814-C770-44FA-8A7F-F4206C6F5DFE}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{8B472814-C770-44FA-8A7F-F4206C6F5DFE}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="SoundBank" ID="{6E4A341E-D2D5-41E4-9F5F-12B7F044DC7A}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Coin" ID="{0AFF5C4B-21D3-49ED-BAC2-347063B6DDE0}" WorkUnitID="{5E6C40B5-4427-43AC-B6AA-F629FABB7AB2}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music" ID="{523426D2-57A9-4B09-B7D0-340F155606F7}" WorkUnitID="{5E6C40B5-4427-43AC-B6AA-F629FABB7AB2}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Music" ID="{964AC671-C79B-4B15-83AC-B4F9067F5AC9}" WorkUnitID="{5E6C40B5-4427-43AC-B6AA-F629FABB7AB2}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Mushrooms" ID="{265EB1CD-DA64-488C-9030-0D63C3897F2B}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Mushroom" ID="{B05723E2-2B26-4A9D-B54F-7677A7E962FC}" WorkUnitID="{5E6C40B5-4427-43AC-B6AA-F629FABB7AB2}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
