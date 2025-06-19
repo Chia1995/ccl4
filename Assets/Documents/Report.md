@@ -70,7 +70,8 @@
 *(List and explain 3 important achievements you are proud of (e.g., features, techniques, etc.) in the project. Please explain in detail.)*  
 
 1. Creating trippy Shader with Shadertoy. Shader is used on the Sphere which follows the position of the player  
-2. Item  
+2. Creation and Animation of 3D Models and Scene Elements
+The creation of the mushroom, death character, and player models, along with their animations, was a major achievement. Each model was carefully designed, rigged, and animated to fit the game’s surreal theme. The death character's entrance when the player loses adds strong visual feedback. Additionally, several scene elements like mushrooms, hearts, and background objects were custom-made to create a consistent and immersive environment. 
 3. Item  
 
 ---
@@ -82,7 +83,8 @@
 ## Major Challenges and Solutions
 *(List and explain the major challenges. Did you solve it? How? Please explain in detail.)*
 
-1. Item  
+1. Baking Textures in Blender
+One of the biggest challenges we faced was baking textures in Blender. We weren’t able to get the desired results on our own, which affected the visual quality of our models. With the help of Hannes, we were able to understand the process and fix the issue. This allowed us to correctly apply textures and improve the overall appearance of our assets in Unity. 
 2. Item  
 
 ---
