@@ -19,14 +19,6 @@ public class VillainFollower : MonoBehaviour
         }
 
         animator = GetComponent<Animator>();
-
-        // Start running immediately if you have a running parameter
-        /*
-        if (animator != null)
-        {
-            animator.SetBool("isRunning", true); // Uncomment and update parameter name if needed
-        }
-        */
     }
 
     void Update()

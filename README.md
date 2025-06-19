@@ -4,7 +4,61 @@
 
 ![Logo](Assets/Documents/Images/logo.png)
 
-# 2. The Game
+# 2. 🎮 Game Logic
+
+This game is an infinite runner where the player navigates forward across a series of ground tiles, collecting items and avoiding obstacles to survive and achieve the highest score possible. The core mechanics are based on speed progression, obstacle avoidance, and item collection.
+
+---
+
+### 🚀 Core Gameplay Flow
+
+- The player character **automatically runs forward**.
+- The environment is made of **ground tiles** that continuously spawn as the player progresses.
+- Each tile may randomly spawn:
+  - **Obstacles** (e.g., walls, spikes).
+  - **Coins** to increase score.
+  - **Heart collectibles** to restore lost lives.
+
+---
+
+### 🧍 Player Controls
+
+- The player can:
+  - **Switch between three lanes** (left, center, right).
+  - **Jump** to avoid obstacles or gaps.
+- **Falling off the ground** or **hitting an obstacle** results in losing a life.
+
+---
+
+### 💔 Health & Game Over Logic
+
+- The player starts with **3 lives**, visually shown as heart icons.
+- A life is lost when:
+  - The player **collides with an obstacle** (e.g., wall or mushroom).
+  - The player **falls off the ground**.
+- The player can **restore one life** by collecting a **heart** (if lives are below 3).
+- The game ends if:
+  - The player **loses all 3 lives**.
+  - The player's **score drops below 0** (from hitting obstacles).
+
+---
+
+### 💰 Score System
+
+- Collecting a **coin** increases the score by **+1**.
+- Hitting an obstacle deducts **−20 points** from the current score.
+- If the score becomes **less than 0**, it’s **game over**.
+- The player's movement speed increases slightly as the score increases, making the game harder over time.
+
+---
+
+### 🔄 Restarting the Game
+
+- On game over, the player is taken to a **Game Over** screen.
+- From there, the player can:
+  - **Restart** the game with full lives and zero score.
+  - **Quit** the application.
+
 
 # 3. Motivation
 
@@ -61,7 +115,89 @@
 
 # 6. System Design
 
+## Overview
+
+This Unity game features a modular design with distinct systems for player control, environment, collectibles, enemies, power-ups, and UI.
+
+## Core Systems
+
+### Player Movement (`PlayerMovement.cs`)
+
+- Auto-runs, lane-switches, jumps using the Input System.
+- Speed increases with coins collected.
+- Restarts if player falls below y = -5.
+- Uses Rigidbody and Animator.
+- Updates GameManager for speed.
+
+### Game Management (`GameManager.cs`)
+
+- Singleton that tracks score (coins increase, obstacles decrease), lives (hitCount, max 3), and game state.
+- Game over triggered if `hitCount >= 3` or score <= 0.
+- Updates UI elements (`TextMeshProUGUI`, `LivesUI`).
+- Handles scene transitions.
+
+### Tile Generation (`GroundSpawner.cs`, `GroundTile.cs`)
+
+- Spawns tiles for an endless path.
+- Tiles add obstacles (random positions) and coins.
+- Tiles are destroyed after player passes.
+- Uses colliders; GroundSpawner triggers GroundTile spawning.
+
+### Collectibles (`Collectibles.cs`, `LifeMushroom.cs`)
+
+- Coins follow a random pattern, rotate, and add score.
+- Life Mushrooms spawn if `hitCount > 0` and restore life.
+- Use collider triggers and are destroyed if behind player.
+- Update GameManager accordingly.
+
+### Power-Ups (`MagnetPowerup.cs`, `PlayerMagnet.cs`, `MagnetSpawner.cs`)
+
+- Magnets spawn periodically and attract collectibles for 5 seconds.
+- Use collider triggers and are destroyed if behind player.
+- PlayerMagnet handles attraction logic.
+
+### Obstacles (`Obstacle.cs`, `MovingObstacle.cs`)
+
+- Static and moving obstacles increase `hitCount` and reduce score.
+- Use colliders and notify GameManager on collision.
+
+### UI (`LivesUI.cs`, `GameOverUI.cs`, `MainMenuUI.cs`, `SceneLoader.cs`)
+
+- Displays lives (heart icons), score, final score, and menu options.
+- Uses `Image`, `TextMeshProUGUI`, and `Button`.
+- Driven by GameManager state.
+
+### Camera (`CameraFollow.cs`)
+
+- Tracks player with a fixed offset, locks x position at 0.
+- Updated in `LateUpdate` to smooth movement.
+
+### Villain (`VillainFollower.cs`)
+
+- Follows the player.
+- Attempts to catch the player when `hitCount >= 3`.
+- Uses Animator for animations.
+
+## Interactions
+
+- Player updates GameManager for score, lives, and speed.
+- GroundSpawner and GroundTile generate the path with obstacles and coins.(Procedural environment with tile-based spawning and destruction.)
+- Collectibles, power-ups, and obstacles interact with GameManager.
+- UI reflects current GameManager state.
+- Camera and villain track player position.
+
+### Architecture Highlights
+- Component-based and modular for easy maintenance and extension.
+- Procedural environment with tile-based spawning and destruction.
+- Input handled via Unity’s Input System for smooth controls.
+- Power-ups and collectibles interact through collision triggers.
+- Simple enemy AI focused on pursuit and capture logic.
+
+This structure supports scalable, manageable gameplay mechanics and smooth player experience.
+
+
 # 7. System Infrastructure
+
 
 # 8. How to run the program (User guideline)
 
