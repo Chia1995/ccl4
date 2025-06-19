@@ -15,7 +15,7 @@ This game is an infinite runner where the player navigates forward across a seri
 - The player character **automatically runs forward**.
 - The environment is made of **ground tiles** that continuously spawn as the player progresses.
 - Each tile may randomly spawn:
-  - **Obstacles** (e.g., walls, spikes).
+  - **Obstacles** (e.g., walls, mushroom).
   - **Coins** to increase score.
   - **Heart collectibles** to restore lost lives.
 
@@ -25,7 +25,7 @@ This game is an infinite runner where the player navigates forward across a seri
 
 - The player can:
   - **Switch between three lanes** (left, center, right).
-  - **Jump** to avoid obstacles or gaps.
+  - **Jump** to avoid obstacles.
 - **Falling off the ground** or **hitting an obstacle** results in losing a life.
 
 ---
@@ -57,7 +57,7 @@ This game is an infinite runner where the player navigates forward across a seri
 - On game over, the player is taken to a **Game Over** screen.
 - From there, the player can:
   - **Restart** the game with full lives and zero score.
-  - **Quit** the application.
+  - **Quit** the application to return to the `StartGame` scene.
 
 
 # 3. Motivation
