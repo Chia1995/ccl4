@@ -34,6 +34,11 @@
 				</Sound>
 				<Sound Name="Coin" ID="{24AAD323-4AE4-456E-8385-E0EC2F4424CF}" ShortID="729988724">
 					<PropertyList>
+						<Property Name="InitialDelay" Type="Real64">
+							<ValueList>
+								<Value>31</Value>
+							</ValueList>
+						</Property>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
@@ -42,6 +47,11 @@
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -73,6 +83,11 @@
 				</Sound>
 				<Sound Name="Mushroom" ID="{B88ACABE-3207-4627-9D21-7CD52D6F9AEA}" ShortID="920401347">
 					<PropertyList>
+						<Property Name="InitialDelay" Type="Real64">
+							<ValueList>
+								<Value>18</Value>
+							</ValueList>
+						</Property>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
