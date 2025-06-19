@@ -14,11 +14,15 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_COIN = 3114179205U;
+        static const AkUniqueID PLAY_MUSHROOM = 1590092312U;
+        static const AkUniqueID PLAY_MUSIC = 2932040671U;
+        static const AkUniqueID STOP_MUSIC = 2837384057U;
     } // namespace EVENTS
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID MUSHROOMS = 510234242U;
         static const AkUniqueID SOUNDBANK = 1661994096U;
     } // namespace BANKS
 

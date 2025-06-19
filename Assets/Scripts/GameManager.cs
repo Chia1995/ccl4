@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText = null; // Reference to UI score text
     [SerializeField] private PlayerMovement playerMovement = null;
 
-    private int score = 0;
+    private int score = 20;
     private int hitCount = 0;
     private bool isGameOver = false;
 

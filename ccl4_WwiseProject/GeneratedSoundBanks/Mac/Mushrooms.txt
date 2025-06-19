@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1590092312	Play_Mushroom			\Default Work Unit\Play_Mushroom	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	857655020	Mushroom	Y:\Workspace\Main_CCL4\ccl4\ccl4_WwiseProject\.cache\72\{72A517BF-A074-5AA8-15D8-BB9B55A48890}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mushroom		111452
+

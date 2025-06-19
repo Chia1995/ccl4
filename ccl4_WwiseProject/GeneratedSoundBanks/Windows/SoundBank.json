@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6E4A341E-D2D5-41E4-9F5F-12B7F044DC7A}",
     "Language": "SFX",
-    "Hash": "{D8C162C6-BCBB-CD35-A7F6-4E05B8209A27}",
+    "Hash": "{12EEFC68-BF5C-6B10-790F-376E35F6CB5F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SoundBank",
     "ShortName": "SoundBank",
     "Path": "SoundBank.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "Coin.wav",
       "CachePath": "37/{373A0E72-4877-047E-4CE5-320646508902}.wem"
+     },
+     {
+      "Id": "506943541",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Music.wav",
+      "CachePath": "0A/{0A2C0595-5239-7F11-7B35-3B8115527B25}.wem"
      }
     ],
     "Events": [
@@ -38,10 +46,32 @@
         "Id": "40044679"
        }
       ]
+     },
+     {
+      "Id": "2932040671",
+      "Name": "Play_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Music",
+      "GUID": "{964AC671-C79B-4B15-83AC-B4F9067F5AC9}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "506943541"
+       }
+      ]
+     },
+     {
+      "Id": "2837384057",
+      "Name": "Stop_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Music",
+      "GUID": "{523426D2-57A9-4B09-B7D0-340F155606F7}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ]
    }
   ],
-  "FileHash": "{B41D3AF0-4009-450D-6ECF-B64987B96C13}"
+  "FileHash": "{9677752C-FFC1-57C5-D7C6-85D26D4A302F}"
  }
 }

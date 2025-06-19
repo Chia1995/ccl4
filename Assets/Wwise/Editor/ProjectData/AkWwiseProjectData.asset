@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 1428478b70c7fa448a7ff4206c6f5dfe
     GuidInternal: 
-    m_lastTime: -8584513771160965684
+    m_lastTime: -8584513621172007884
     List:
+    - name: Mushrooms
+      guid: cdb15e2664da8c4890300d63c3897f2b
+      id: 510234242
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1428478b70c7fa448a7ff4206c6f5dfe
+      - ElementName: Mushrooms
+        ObjectType: 7
+        guid: cdb15e2664da8c4890300d63c3897f2b
+      Path: SoundBanks/Default Work Unit/Mushrooms
     - name: SoundBank
       guid: 1e344a6ed5d2e4419f5f12b7f044dc7a
       id: 1661994096
@@ -94,7 +108,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: b5406c5e2744ac43b6aaf629fabb7ab2
     GuidInternal: 
-    m_lastTime: -8584513771161043111
+    m_lastTime: -8584513621172051970
     List:
     - name: Play_Coin
       guid: 4b5cff0ad321ed49bac2347063b6dde0
@@ -113,6 +127,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.2953603
       minDuration: 0.2953603
+    - name: Play_Mushroom
+      guid: e22357b0262b9d4ab54f7677a7e962fc
+      id: 1590092312
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b5406c5e2744ac43b6aaf629fabb7ab2
+      - ElementName: Play_Mushroom
+        ObjectType: 3
+        guid: e22357b0262b9d4ab54f7677a7e962fc
+      Path: Events/Default Work Unit/Play_Mushroom
+      maxAttenuation: 0
+      maxDuration: 1.1599518
+      minDuration: 1.1599518
+    - name: Play_Music
+      guid: 71c64a969bc7154b83acb4f9067f5ac9
+      id: 2932040671
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b5406c5e2744ac43b6aaf629fabb7ab2
+      - ElementName: Play_Music
+        ObjectType: 3
+        guid: 71c64a969bc7154b83acb4f9067f5ac9
+      Path: Events/Default Work Unit/Play_Music
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_TestPoison
       guid: 0de87f3c8576d34d94008d19bffce599
       id: 3578776682
@@ -130,6 +178,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_Music
+      guid: d2263452a957094bb7d0340f155606f7
+      id: 2837384057
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b5406c5e2744ac43b6aaf629fabb7ab2
+      - ElementName: Stop_Music
+        ObjectType: 3
+        guid: d2263452a957094bb7d0340f155606f7
+      Path: Events/Default Work Unit/Stop_Music
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
@@ -186,7 +251,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584513837905921870
     List: []
-  ExpandedFileSystemItemIds: 02000000030000000600000007000000090000000a0000000b0000000c000000
+  ExpandedFileSystemItemIds: 02000000030000000600000007000000090000000a0000000b0000000c0000000d000000
   ExpandedWaapiItemIds: 0600000007000000090000000a0000000b0000000c000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

@@ -28,6 +28,45 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Mushroom" ID="{B05723E2-2B26-4A9D-B54F-7677A7E962FC}">
+					<ChildrenList>
+						<Action Name="" ID="{3F374C6D-9074-4D22-B2CE-81B177E597DC}" ShortID="614514447">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mushroom" ID="{B88ACABE-3207-4627-9D21-7CD52D6F9AEA}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Music" ID="{964AC671-C79B-4B15-83AC-B4F9067F5AC9}">
+					<ChildrenList>
+						<Action Name="" ID="{248E251B-E9EE-4391-94B2-88F65944F316}" ShortID="935184898">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="10"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{323D0963-57EC-47F2-84A6-0AFA0CEB75DA}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Music" ID="{523426D2-57A9-4B09-B7D0-340F155606F7}">
+					<ChildrenList>
+						<Action Name="" ID="{BB6AC812-D437-44FD-9177-6E69C7FDC62B}" ShortID="74496012">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{323D0963-57EC-47F2-84A6-0AFA0CEB75DA}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
