@@ -198,6 +198,11 @@ This structure supports scalable, manageable gameplay mechanics and smooth playe
 
 # 7. System Infrastructure
 
+The diagram below illustrates the core structure and class relationships within the game. It demonstrates how key components—such as the `GameManager`, player movement, collectibles, UI elements, and power-ups—are built on top of Unity’s `MonoBehaviour` and interact with each other during runtime.
+
+![Class Diagram](Assets/Documents/ClassDiagram/includeDiagram.png)
+
+
 
 # 8. How to run the program (User guideline)
 
