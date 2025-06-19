@@ -1,78 +1,248 @@
 # CCL4 - Game "Don't Die High"
  
-# 1. Feature Description (What the Game Does)
+# 1. Logo
 
-## Core Gameplay:
-- Auto-Runner Platformer: Player runs forward at a constant speed.
-- Controls: Left, Right, Jump.
- 
-Difficulty Progression:
-- Player speed increases over time or distance (method TBD).
- 
-Obstacles: 
-- Mushroom 1 → -10 lifepoints
-- Mushroom 2 → -30 lifepoints
-- Mushroom 3 → -random(0–80) lifepoints
-- Wall → -5 lifepoints and triggers stumble animation
- 
-Collectibles:
-- Heart → restores +20 lifepoints (up to 100 max)
+![Logo](Assets/Documents/Images/logo.png)
 
-Scene Flow:
-- Startscreen → press Start → loads Playscreen
-- Playscreen: player auto-runs, interacts with obstacles/collectibles
-- Gameoverscreen: triggered when lifepoints = 0
- 
- 
-# 2. System Design
- 
-Player System:
-- Movement
-- Health System
-- Speed Increase
+# 2. 🎮 Game Logic
 
- 
-Collision Logic:
-- All obstacle/collectible collisions use triggers or colliders.
-- Mushroom 3 triggers both:
-- Wall also triggers a stumble animation.
+This game is an infinite runner where the player navigates forward across a series of ground tiles, collecting items and avoiding obstacles to survive and achieve the highest score possible. The core mechanics are based on speed progression, obstacle avoidance, and item collection.
 
- 
-Visual Effects:
-- Death Character appears only after hitting Mushroom 3, not based on HP threshold.
-- No direct gameplay effect — only visual.
- 
- 
-# 3. System Infrastructure 
- 
-Scenes:
-Startscreen, Playscreen, Gameoverscreen
-Managed via SceneManager.LoadScene("SceneName")
+---
 
-Scripts: 
-- GameManager (singleton) → tracks lifepoints, game state transitions
-- PlayerMovement → handles input and physics
-- ObstacleHandler or per-obstacle logic → processes collisions and HP deduction
-- HeartPickup → restores HP on collection
-- VisualEffectsController → triggers death character animation
+### 🚀 Core Gameplay Flow
 
-UI:
-- HP bar: probably Slider or Image.fillAmount
-- Heart/lifepoint visuals in Playscreen
-- Possibly uses Unity’s new Input System (TBD)
- 
-Audio & Animations:
-- Animation: running, jump, stumble, death character appear
-- Audio: pickup, hit, ambient sounds
- 
-HP loss
-- Visual “Death Character” animation (regardless of final HP)
-- Implemented (method not yet confirmed).
-- Starts at 100 HP.
-- Decreases with obstacle hits.
-- Increases with heart pickups (+20 HP, max 100).
-- Game over when HP reaches 0.
-- Forward movement is automatic.
-- Left/Right and Jump are player-controlled.
-- Also triggers Death Character appearance (visual only; no gameplay effect)
- 
+- The player character **automatically runs forward**.
+- The environment is made of **ground tiles** that continuously spawn as the player progresses.
+- Each tile may randomly spawn:
+  - **Obstacles** (e.g., walls, spikes).
+  - **Coins** to increase score.
+  - **Heart collectibles** to restore lost lives.
+
+---
+
+### 🧍 Player Controls
+
+- The player can:
+  - **Switch between three lanes** (left, center, right).
+  - **Jump** to avoid obstacles or gaps.
+- **Falling off the ground** or **hitting an obstacle** results in losing a life.
+
+---
+
+### 💔 Health & Game Over Logic
+
+- The player starts with **3 lives**, visually shown as heart icons.
+- A life is lost when:
+  - The player **collides with an obstacle** (e.g., wall or mushroom).
+  - The player **falls off the ground**.
+- The player can **restore one life** by collecting a **heart** (if lives are below 3).
+- The game ends if:
+  - The player **loses all 3 lives**.
+  - The player's **score drops below 0** (from hitting obstacles).
+
+---
+
+### 💰 Score System
+
+- Collecting a **coin** increases the score by **+1**.
+- Hitting an obstacle deducts **−20 points** from the current score.
+- If the score becomes **less than 0**, it’s **game over**.
+- The player's movement speed increases slightly as the score increases, making the game harder over time.
+
+---
+
+### 🔄 Restarting the Game
+
+- On game over, the player is taken to a **Game Over** screen.
+- From there, the player can:
+  - **Restart** the game with full lives and zero score.
+  - **Quit** the application.
+
+
+# 3. Motivation
+
+# 4. 3D Modeling and Animation
+
+## 3D Models done by Blender
+- Player  
+    
+<p float="left">
+<img src="Assets/Documents/Images/playerfront.png" height="300" width="200"/>
+<img src="Assets/Documents/Images/playerback.png" height="300"  width="200"/>
+<img src="Assets/Documents/Images/playerside.png" height="300"  width="180"/>
+</p>
+
+- Animation Idle
+<p float="left">
+<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
+<img src="Assets/Documents/Images/PlayerIdleSide.gif" width="200"/>
+</p>
+
+- Animation Run
+<p float="left">
+<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
+</p>
+
+- Animation Jump
+<p float="left">
+<img src="Assets/Documents/Images/PlayerIdleFront.gif" height="300" width="200"/>
+</p>
+
+- Villain
+    - Animation Run
+- Environment
+    - Road (Image)
+    - Flower
+    - Tree
+    - RedMushroom
+- Obstacles
+    - Mushroom
+        - Animation Idle
+## Unity Asset Store
+- 3D Gamekit - Environment Pack
+    - Ground, mushroom, trees, rocks, and flowers used in the `StartGame` scene and `GameOver`
+- FantasyEnvironments
+    - Ground, mushroom, trees, rocks, and flowers used in the `StartGame` scene and `GameOver`
+
+## free3d.com
+- Magnet
+- Heart
+
+## Scenes
+
+# 5. Game Audio
+
+# 6. System Design
+
+## Overview
+
+This Unity game features a modular design with distinct systems for player control, environment, collectibles, enemies, power-ups, and UI.
+
+## Core Systems
+
+### Player Movement (`PlayerMovement.cs`)
+
+- Auto-runs, lane-switches, jumps using the Input System.
+- Speed increases with coins collected.
+- Restarts if player falls below y = -5.
+- Uses Rigidbody and Animator.
+- Updates GameManager for speed.
+
+### Game Management (`GameManager.cs`)
+
+- Singleton that tracks score (coins increase, obstacles decrease), lives (hitCount, max 3), and game state.
+- Game over triggered if `hitCount >= 3` or score <= 0.
+- Updates UI elements (`TextMeshProUGUI`, `LivesUI`).
+- Handles scene transitions.
+
+### Tile Generation (`GroundSpawner.cs`, `GroundTile.cs`)
+
+- Spawns tiles for an endless path.
+- Tiles add obstacles (random positions) and coins.
+- Tiles are destroyed after player passes.
+- Uses colliders; GroundSpawner triggers GroundTile spawning.
+
+### Collectibles (`Collectibles.cs`, `LifeMushroom.cs`)
+
+- Coins follow a random pattern, rotate, and add score.
+- Life Mushrooms spawn if `hitCount > 0` and restore life.
+- Use collider triggers and are destroyed if behind player.
+- Update GameManager accordingly.
+
+### Power-Ups (`MagnetPowerup.cs`, `PlayerMagnet.cs`, `MagnetSpawner.cs`)
+
+- Magnets spawn periodically and attract collectibles for 5 seconds.
+- Use collider triggers and are destroyed if behind player.
+- PlayerMagnet handles attraction logic.
+
+### Obstacles (`Obstacle.cs`, `MovingObstacle.cs`)
+
+- Static and moving obstacles increase `hitCount` and reduce score.
+- Use colliders and notify GameManager on collision.
+
+### UI (`LivesUI.cs`, `GameOverUI.cs`, `MainMenuUI.cs`, `SceneLoader.cs`)
+
+- Displays lives (heart icons), score, final score, and menu options.
+- Uses `Image`, `TextMeshProUGUI`, and `Button`.
+- Driven by GameManager state.
+
+### Camera (`CameraFollow.cs`)
+
+- Tracks player with a fixed offset, locks x position at 0.
+- Updated in `LateUpdate` to smooth movement.
+
+### Villain (`VillainFollower.cs`)
+
+- Follows the player.
+- Attempts to catch the player when `hitCount >= 3`.
+- Uses Animator for animations.
+
+## Interactions
+
+- Player updates GameManager for score, lives, and speed.
+- GroundSpawner and GroundTile generate the path with obstacles and coins.(Procedural environment with tile-based spawning and destruction.)
+- Collectibles, power-ups, and obstacles interact with GameManager.
+- UI reflects current GameManager state.
+- Camera and villain track player position.
+
+### Architecture Highlights
+- Component-based and modular for easy maintenance and extension.
+- Procedural environment with tile-based spawning and destruction.
+- Input handled via Unity’s Input System for smooth controls.
+- Power-ups and collectibles interact through collision triggers.
+- Simple enemy AI focused on pursuit and capture logic.
+
+This structure supports scalable, manageable gameplay mechanics and smooth player experience.
+
+
+# 7. System Infrastructure
+
+
+# 8. How to run the program (User guideline)
+
+## 1️⃣ Requirements
+- Unity version: 2022.3.59fi
+- Platform: Windows
+- Input device: Keyboard
+
+---
+
+## 2️⃣ Setup Instructions
+1. Download the ZIP folder and extract it.
+2. Open the project in **Unity Hub** and select the correct Unity version.
+3. In Unity, open the scene:
+   - `StartGame` (main menu scene)
+4. Check that the build settings are correct:
+   - Go to `File > Build Settings`
+   - Ensure all 3 scenes are in the build list.
+      - `StartGame` (main menu scene)
+      - `MainGameScene` (main menu scene)
+      - `GameOverScene` (main menu scene)
+---
+
+## 3️⃣ How to Play
+- **Movement:** Use `A` to move to the right and `D` to move to the left
+- **Jump:** Press `Spacebar` to jump.
+- **Collect items:** Collect coins to get a score, collect a magnet to get all nearby coins automatically
+- **Avoid obstacles:** Avoid walls and mushrooms. (loose hearts)
+
+---
+
+## 4️⃣ Run the Program
+- Press the **Play** button in the Unity editor to start.
+- Or build the game:
+  1. Go to `File > Build Settings`
+  2. Select your platform (e.g., PC, Mac)
+  3. Click **Build and Run**
+
+---
+
+## 5️⃣ Exiting
+- Press the **Quit** button in the game over scene to return to the Main menu scene `StartGame`. In this scene, you click "Exit Game" to close the application.
+
+---
+
+## 6️⃣ Notes
+- The game is designed for full screen, but it works in windowed mode.
+- For the best experience, play in 16:9 resolution.

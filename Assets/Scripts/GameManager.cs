@@ -47,6 +47,15 @@ public class GameManager : MonoBehaviour
         UpdateScoreUI();
         UpdateLivesUI(); // Initialize hearts on start
     }
+    // Update is called once per frame
+    // Check if player has fallen off the platform
+    private void Update()
+    {
+        if (playerMovement != null && playerMovement.transform.position.y < -5f && !isGameOver)
+        {
+            OnFallOffPlatform();
+        }
+    }
 
     private void OnEnable()
     {
@@ -105,6 +114,7 @@ public class GameManager : MonoBehaviour
 
         hitCount++;
         score -= 20;
+        Debug.Log($"HitCount increased to: {hitCount}");
         UpdateScoreUI();
         UpdateLivesUI();
 
@@ -116,6 +126,13 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+    // Called when the player falls off the platform
+    // This is treated as an obstacle hit for simplicity
+    private void OnFallOffPlatform()
+    {
+        Debug.Log("Player fell off the platform!");
+        OnObstacleHit(); // Treat fall as a hit
     }
 
     // Ends the game and saves final score
@@ -173,4 +190,14 @@ public class GameManager : MonoBehaviour
         // We're only using the LivesUI with heart icons now
         FindObjectOfType<LivesUI>()?.UpdateLives(3 - hitCount);
     }
+
+    // Restores one life when collecting a LifeMushroom
+    public void RestoreLife()
+    {
+        if (isGameOver || hitCount <= 0) return; // Don't restore if game over or full lives
+
+        hitCount = Mathf.Max(0, hitCount - 1); // Reduce hitCount by 1 (restore 1 life)
+        UpdateLivesUI(); // Update the heart icons
+    }
+
 }
