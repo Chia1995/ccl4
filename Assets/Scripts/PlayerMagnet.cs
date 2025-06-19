@@ -42,7 +42,7 @@ public class PlayerMagnet : MonoBehaviour
         }
     }
 
-    // ✅ This method works with MagnetPowerup.cs
+    // This method works with MagnetPowerup.cs
     public void ActivateMagnet(float duration)
     {
         isMagnetActive = true;
