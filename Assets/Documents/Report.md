@@ -19,7 +19,7 @@
 
 ---
 
-## Key Features and Implementation Detail
+## Key Features and Implementation Details
 
 ### 3D Modeling
 
@@ -28,7 +28,7 @@
     - Animation Idle, Run, Jump  
 - Villain  
     - Animation Run  
-- Enviroment  
+- Environment  
     - Road  
     - Flower  
     - Tree  
@@ -39,9 +39,9 @@
 
 #### Unity Asset Store
 - 3D Gamekit - Environment Pack  
-    - Ground, mushroom, trees, rocks and flowers used in `StartGame` scene and `GameOver`  
+    - Ground, mushroom, trees, rocks, and flowers used in `StartGame` scene and `GameOver`  
 - FantasyEnvironments  
-    - Ground, mushroom, trees, rocks and flowers used in `StartGame` scene and `GameOver`  
+    - Ground, mushroom, trees, rocks, and flowers used in `StartGame` scene and `GameOver`  
 
 #### free3d.com
 - Magnet  
@@ -76,13 +76,13 @@ The game begins with the player auto-running on a procedurally generated track. 
 ## Three Important Achievements  
 *(List and explain 3 important achievements you are proud of (e.g., features, techniques, etc.) in the project. Please explain in detail.)*  
 
-1. Creating trippy Shader with Shadertoy. Shader is used on the Sphere which follows the position of the player  
+1. Creating trippy Shader with Shadertoy. Shader is used on the Sphere, which follows the position of the player  
 
 2. Creation and Animation of 3D Models and Scene Elements  
 The creation of the mushroom, death character, and player models, along with their animations, was a major achievement. Each model was carefully designed, rigged, and animated to fit the game’s surreal theme. The death character's entrance when the player loses adds strong visual feedback. Additionally, several scene elements like mushrooms, hearts, and background objects were custom-made to create a consistent and immersive environment.  
 
 3. **Villain AI and Dynamic Ground Tile Spawning**  
-One of the most technically interesting features was our Villain AI system. The villain begins following the player but only catches them after three hits. It dynamically rotates toward the player and adjusts its movement based on proximity and the game state. Here’s a snippet from `VillainFollower.cs`:
+One of the most technically interesting features was our Villain AI system. The villain begins following the player, but only catches them after three hits. It dynamically rotates toward the player and adjusts its movement based on proximity and the game state. Here’s a snippet from `VillainFollower.cs`:
 ---
 ```csharp
 if (GameManager.Instance != null && GameManager.Instance.HitCount < 3)
@@ -123,10 +123,10 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 
 *(List and explain the major challenges. Did you solve it? How? Please explain in detail.)*
 
-1. **Baking Textures in Blender**
+1. **Baking Textures in Blender**  
    One of the biggest challenges we faced was baking textures in Blender. We weren’t able to get the desired results on our own, which affected the visual quality of our models. With the help of Hannes, we were able to understand the process and fix the issue. This allowed us to correctly apply textures and improve the overall appearance of our assets in Unity.
 
-2. **Making the Villain Follow the Player**
+2. **Making the Villain Follow the Player**  
    Getting the villain to follow the player smoothly, without looking jittery or unnatural, was a major challenge. Initially, the movement lagged behind or turned awkwardly. We solved this by using vector math to calculate direction, applying smooth movement using `Vector3.Lerp`, and adding rotation logic to ensure the villain always faces the player correctly. We also made sure the villain only initiates the "catch" phase after `GameManager.HitCount` reaches 3. This created suspense and made the gameplay more reactive.
 
 ---
@@ -135,14 +135,14 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 
 *(List and explain the minor challenges. Did you solve it? How? Please explain in detail.)*
 
-1. **UI Button Linking and Scene Management**
+1. **UI Button Linking and Scene Management**  
    Buttons on Game Over and Main Menu screens occasionally broke after reloading. We resolved this by using the `SceneLoader` script and ensuring all buttons were properly linked in the inspector.
 
 2. Item
 
 ---
 
-## Reflections on the Own Project
+## Reflections on the Own Project  
 
 *(List and explain what you could improve and add if you have more time.)*
 
