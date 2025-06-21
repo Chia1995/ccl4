@@ -134,7 +134,7 @@ This Unity game features a modular design with distinct systems for player contr
 ### Game Management (`GameManager.cs`)
 
 - Singleton that tracks score (coins increase, obstacles decrease), lives (hitCount, max 3), and game state.
-- Game over triggered if `hitCount >= 3` or score <= 0.
+- Game over is triggered if `hitCount >= 3` or score <= 0.
 - Updates UI elements (`TextMeshProUGUI`, `LivesUI`).
 - Handles scene transitions.
 
@@ -145,10 +145,10 @@ This Unity game features a modular design with distinct systems for player contr
 - Tiles are destroyed after player passes.
 - Uses colliders; GroundSpawner triggers GroundTile spawning.
 
-### Collectibles (`Collectibles.cs`, `LifeHeart.cs`)
+### Collectibles (`Collectibles.cs`, `LifeHeart.cs`, `LifeHeartSpawner.cs`)
 
 - Coins follow a random pattern, rotate, and add score.
-- Life Mushrooms spawn if `hitCount > 0` and restore life.
+- Life hearts spawn if `hitCount > 0` and restore life.
 - Use collider triggers and are destroyed if behind player.
 - Update GameManager accordingly.
 
