@@ -145,7 +145,7 @@ This Unity game features a modular design with distinct systems for player contr
 - Tiles are destroyed after player passes.
 - Uses colliders; GroundSpawner triggers GroundTile spawning.
 
-### Collectibles (`Collectibles.cs`, `LifeMushroom.cs`)
+### Collectibles (`Collectibles.cs`, `LifeHeart.cs`)
 
 - Coins follow a random pattern, rotate, and add score.
 - Life Mushrooms spawn if `hitCount > 0` and restore life.
