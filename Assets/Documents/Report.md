@@ -1,4 +1,3 @@
-
 # Code Review Report
 
 **Course:** CCL4 SS 2025 (5 ECTS, 3 SWS)  
@@ -76,9 +75,10 @@ The game begins with the player auto-running on a procedurally generated track. 
 ## Three Important Achievements  
 *(List and explain 3 important achievements you are proud of (e.g., features, techniques, etc.) in the project. Please explain in detail.)*  
 
-1. Creating trippy Shader with Shadertoy. Shader is used on the Sphere, which follows the position of the player  
+1. **Creating trippy Shader with Shadertoy**  
+Shader is used on the Sphere, which follows the position of the player  
 
-2. Creation and Animation of 3D Models and Scene Elements  
+2. **Creation and Animation of 3D Models and Scene Elements**  
 The creation of the mushroom, death character, and player models, along with their animations, was a major achievement. Each model was carefully designed, rigged, and animated to fit the game’s surreal theme. The death character's entrance when the player loses adds strong visual feedback. Additionally, several scene elements like mushrooms, hearts, and background objects were custom-made to create a consistent and immersive environment.  
 
 3. **Villain AI and Dynamic Ground Tile Spawning**  
@@ -136,7 +136,7 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 *(List and explain the minor challenges. Did you solve it? How? Please explain in detail.)*
 
 1. **UI Button Linking and Scene Management**  
-   Buttons on Game Over and Main Menu screens occasionally broke after reloading. We resolved this by using the `SceneLoader` script and ensuring all buttons were properly linked in the inspector.
+   Buttons on the Game Over and Main Menu screens occasionally broke after reloading. We resolved this by using the `SceneLoader` script and ensuring all buttons were properly linked in the inspector.
 
 2. Item
 
