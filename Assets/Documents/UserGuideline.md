@@ -24,8 +24,8 @@
 - **Movement:** Use `A` to move to the right and `D` to move to the left
 - **Jump:** Press `Spacebar` to jump.
 - **Collect items:** Collect coins to get a score, collect magnet to get all nearby coins automatically, collect a heart to restore a life when you lose one.
-- **Avoid obstacles:** Avoid walls and mushrooms. (loose hearts)
-- **Avoid falling:** Stay on track and don't fall. (loose hearts)
+- **Avoid obstacles:** Avoid walls and mushrooms. (lose hearts)
+- **Avoid falling:** Stay on track and don't fall. (lose hearts)
 
 ---
 
