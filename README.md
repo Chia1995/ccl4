@@ -150,9 +150,9 @@ Don't Die High is a 3D endless runner where the player races along a colorful ra
 
 - Start Game, Main Game, Game Over scenes
 <div style="margin-left: 0;">
-  <img src="Assets/Documents/Images/start_game.png" height="200" width="300" style="float: left; margin-right: 10px;" />
-  <img src="Assets/Documents/Images/main_game.png" height="200" width="300" style="float: left; margin-right: 10px;" />
-  <img src="Assets/Documents/Images/game_over.png" height="200" width="300" style="float: left;" />
+  <img src="Assets/Documents/Images/start_game.png" height="300" width="450" style="float: left; margin-right: 10px;" />
+  <img src="Assets/Documents/Images/main_game.png" height="300" width="450" style="float: left; margin-right: 10px;" />
+  <img src="Assets/Documents/Images/game_over.png" height="300" width="450" style="float: left;" />
   <div style="clear: both;"></div>
 </div>
 
