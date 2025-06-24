@@ -148,6 +148,15 @@ Don't Die High is a 3D endless runner where the player races along a colorful ra
 
 ## Scenes
 
+- Start Game, Main Game, Game Over scenes
+<div style="margin-left: 0;">
+  <img src="Assets/Documents/Images/start_game.png" height="200" width="300" style="float: left; margin-right: 10px;" />
+  <img src="Assets/Documents/Images/main_game.png" height="200" width="300" style="float: left; margin-right: 10px;" />
+  <img src="Assets/Documents/Images/game_over.png" height="200" width="300" style="float: left;" />
+  <div style="clear: both;"></div>
+</div>
+
+
 # 5. Game Audio
 
 This project uses **Audiokinetic Wwise** as the audio middleware, integrated with Unity, to provide advanced sound design and music management. Wwise enables flexible handling of soundbanks, events, and real-time audio control for both sound effects and music.
