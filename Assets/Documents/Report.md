@@ -49,6 +49,16 @@
 - Item  
 - Item, and so forth  
 
+
+[Music]([url](https://github.com/user-attachments/assets/3c46b328-c9fd-4253-8994-27fa22248451))
+
+[Mushroom Sound]([url](https://github.com/user-attachments/assets/0261022b-3573-4a13-8c6a-425fa74f615f))
+
+[Coin Sound]([url](https://github.com/user-attachments/assets/e080bf33-8d7e-4f2d-a08e-2117af5d9a9a))
+
+
+
+
 ### Unity Coding
 - Endless tile generation system  
 - Power-up mechanics (Magnet attraction)  
