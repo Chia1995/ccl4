@@ -46,18 +46,9 @@
 - Heart  
 
 ### Game Audio
-- Item  
-- Item, and so forth  
-
-
-[Music]([url](https://github.com/user-attachments/assets/3c46b328-c9fd-4253-8994-27fa22248451))
-
-[Mushroom Sound]([url](https://github.com/user-attachments/assets/0261022b-3573-4a13-8c6a-425fa74f615f))
-
-[Coin Sound]([url](https://github.com/user-attachments/assets/e080bf33-8d7e-4f2d-a08e-2117af5d9a9a))
-
-
-
+- [Music] https://github.com/user-attachments/assets/3c46b328-c9fd-4253-8994-27fa22248451
+- [Mushroom Sound] https://github.com/user-attachments/assets/0261022b-3573-4a13-8c6a-425fa74f615f
+- [Coin Sound] https://github.com/user-attachments/assets/e080bf33-8d7e-4f2d-a08e-2117af5d9a9a
 
 ### Unity Coding
 - Endless tile generation system  
@@ -125,6 +116,7 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 * Implemented collision-based interactions, tag-based logic, and UI systems
 * Practiced scene management, singleton patterns, and coroutine-based timing
 * Enhanced understanding of shader integration using ShaderToy in Unity
+* Gained hands-on experience on Reaper, Wwise, SoundQ for designing and implementing audio to a project.
 
 ---
 
