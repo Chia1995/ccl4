@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5E6C40B5-4427-43AC-B6AA-F629FABB7AB2}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{5E6C40B5-4427-43AC-B6AA-F629FABB7AB2}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_TestPoison" ID="{3C7FE80D-7685-4DD3-9400-8D19BFFCE599}">
+					<PropertyList>
+						<Property Name="Inclusion" Type="bool" Value="False"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{378553B8-CA30-4667-9DB5-956F646DE173}" ShortID="879431479">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TestPoison" ID="{182F1107-1420-4087-A9DE-E52913C52E4B}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Coin" ID="{0AFF5C4B-21D3-49ED-BAC2-347063B6DDE0}">
+					<ChildrenList>
+						<Action Name="" ID="{3017B373-2149-448A-9B76-A44310D1D935}" ShortID="641898298">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Coin" ID="{24AAD323-4AE4-456E-8385-E0EC2F4424CF}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Mushroom" ID="{B05723E2-2B26-4A9D-B54F-7677A7E962FC}">
+					<ChildrenList>
+						<Action Name="" ID="{3F374C6D-9074-4D22-B2CE-81B177E597DC}" ShortID="614514447">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mushroom" ID="{B88ACABE-3207-4627-9D21-7CD52D6F9AEA}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Music" ID="{964AC671-C79B-4B15-83AC-B4F9067F5AC9}">
+					<ChildrenList>
+						<Action Name="" ID="{248E251B-E9EE-4391-94B2-88F65944F316}" ShortID="935184898">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="10"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{323D0963-57EC-47F2-84A6-0AFA0CEB75DA}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Music" ID="{523426D2-57A9-4B09-B7D0-340F155606F7}">
+					<ChildrenList>
+						<Action Name="" ID="{BB6AC812-D437-44FD-9177-6E69C7FDC62B}" ShortID="74496012">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{323D0963-57EC-47F2-84A6-0AFA0CEB75DA}" WorkUnitID="{9AD79E9A-3DE6-4D12-8C67-6C9AF95DD3FC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
