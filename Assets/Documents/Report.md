@@ -5,16 +5,15 @@
 **Names:**  
 - Milena Biasova - CC231001  
 - Christina Gamperl - CC231023  
-- Augustine Onyirioha - cc231027  
-- Ecem Tasali -  
+- Augustine Onyirioha - CC231027  
+- Ecem Tasali - CC221049
 
 **Your Project Name:** **Don't Die High**   
 
 ---
 
 ## A Short Summary to Promote the Project  
-*(What are the background and the motivation of the project?)*  
-*(Approx. 100 words)*  
+`Don’t Die High` is a 3D endless runner where the player races along a colorful rainbow road through a psychedelic world. The aim is to survive and achieve a high score by collecting coins and hearts to restore lives. The player must avoid poisonous mushrooms and jump over walls — because each mistake costs a life. When a life is lost, Death begins to chase the player, adding tension. As the player runs, Death gradually falls behind and disappears — until the next mistake. Our motivation was to blend vibrant visuals, fast-paced action, and a subtle message: don’t overdo it.  
 
 ---
 
@@ -38,9 +37,9 @@
 
 #### Unity Asset Store
 - 3D Gamekit - Environment Pack  
-    - Ground, mushroom, trees, rocks, and flowers used in `StartGame` scene and `GameOver`  
+    - Ground, mushroom, trees, rocks, and flowers used in `StartGame` scene and `GameOver` scene
 - FantasyEnvironments  
-    - Ground, mushroom, trees, rocks, and flowers used in `StartGame` scene and `GameOver`  
+    - Ground, mushroom, trees, rocks, and flowers used in `StartGame` scene and `GameOver` scene
 
 #### free3d.com
 - Magnet  
@@ -151,7 +150,5 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 
 2. **Level Design Variety**  
    We would add visual and gameplay variation between tiles, perhaps rotating themes or dynamic lighting to make long play sessions more engaging and less repetitive.  
----
-
-**DON'T DIE HIGH!**  
+--- 
 ```
