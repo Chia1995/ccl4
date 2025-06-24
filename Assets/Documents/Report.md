@@ -122,8 +122,6 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 
 ## Major Challenges and Solutions
 
-*(List and explain the major challenges. Did you solve it? How? Please explain in detail.)*
-
 1. **Baking Textures in Blender**  
    One of the biggest challenges we faced was baking textures in Blender. We weren’t able to get the desired results on our own, which affected the visual quality of our models. With the help of Hannes, we were able to understand the process and fix the issue. This allowed us to correctly apply textures and improve the overall appearance of our assets in Unity.
 
@@ -134,12 +132,8 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 
 ## Minor Challenges and Solutions
 
-*(List and explain the minor challenges. Did you solve it? How? Please explain in detail.)*
-
 1. **UI Button Linking and Scene Management**  
    Buttons on the Game Over and Main Menu screens occasionally broke after reloading. We resolved this by using the `SceneLoader` script and ensuring all buttons were properly linked in the inspector.
-
-2. Item
 
 ---
 
@@ -151,6 +145,9 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
    If I had more time, I would definitely improve the animation of the death character. I’m not entirely satisfied with how it turned out, but due to time constraints, I couldn’t refine it as much as I wanted. With more time, I would focus on making the movement smoother and more expressive to better match the dramatic moment when the character appears.
 
 2. **Level Design Variety**  
-   We would add visual and gameplay variation between tiles, perhaps rotating themes or dynamic lighting to make long play sessions more engaging and less repetitive.  
+   We would add visual and gameplay variation between tiles, perhaps rotating themes or dynamic lighting to make long play sessions more engaging and less repetitive.
+
+3. **Audio implementation**
+   We weren’t able to fully solve the issue where the coin and mushroom sounds play at the very start of the game, even though no items have been collected yet.
 --- 
 ```
