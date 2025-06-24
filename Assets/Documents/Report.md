@@ -73,7 +73,6 @@ The game begins with the player auto-running on a procedurally generated track. 
 ---
 
 ## Three Important Achievements  
-*(List and explain 3 important achievements you are proud of (e.g., features, techniques, etc.) in the project. Please explain in detail.)*  
 
 1. **Creating trippy Shader with Shadertoy**  
 Shader is used on the Sphere, which follows the position of the player  
@@ -138,8 +137,6 @@ In addition, we implemented a continuous ground spawning system using `GroundSpa
 ---
 
 ## Reflections on the Own Project  
-
-*(List and explain what you could improve and add if you have more time.)*
 
 1. **Villain Animation and Behavior**  
    If I had more time, I would definitely improve the animation of the death character. I’m not entirely satisfied with how it turned out, but due to time constraints, I couldn’t refine it as much as I wanted. With more time, I would focus on making the movement smoother and more expressive to better match the dramatic moment when the character appears.
