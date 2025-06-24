@@ -106,17 +106,17 @@ Don't Die High is a 3D endless runner where the player races along a colorful ra
     - Road (Image)
     - Flower
       <p float="left">
-  <img src="Assets/Documents/flower.png" height="100" width="300"/>
+  <img src="Assets/Documents/flower.png" height="100" width="200"/>
 </p>
 
    - Tree
      <p float="left">
-  <img src="Assets/Documents/tree asset.png" height="100" width="50"/>
+  <img src="Assets/Documents/tree asset.png" height="100" width="80"/>
 </p>
 
    - RedMushroom
      <p float="left">
-  <img src="Assets/Documents/mushroom_asset.png" height="100" width="50"/>
+  <img src="Assets/Documents/mushroom_asset.png" height="100" width="80"/>
 </p>
 
 - Obstacles
