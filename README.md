@@ -93,7 +93,15 @@ Don't Die High is a 3D endless runner where the player races along a colorful ra
 </p>
 
 - Villain
-    - Animation Run
+<p float="left">
+  <img src="Assets/Documents/Images/death_character.png" height="300" width="200"/>
+</p>
+
+ - Animation Run
+  <p float="left">
+  <img src="Assets/Documents/Images/death_run.gif" height="300" width="200"/>
+</p>
+
 - Environment
     - Road (Image)
     - Flower
