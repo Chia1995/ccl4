@@ -122,17 +122,19 @@ Don't Die High is a 3D endless runner where the player races along a colorful ra
 - Obstacles
 
 - Mushroom
-     <p float="left">
-<img src="Assets/Documents/mushroom_front.png" height="300" width="200"/>
-<img src="Assets/Documents/mushroom_side.png" height="300"  width="200"/>
-</p>
+     <div>
+  <img src="Assets/Documents/mushroom_front.png" height="300" width="200" style="float: left; margin-right: 10px;" />
+  <img src="Assets/Documents/mushroom_side.png" height="300" width="200" style="float: left;" />
+  <div style="clear: both;"></div>
+</div>
 
 - Animation Idle
 
-   <p float="left">
-<img src="Assets/Documents/mushroom_bounce.gif" height="300" width="200"/>
-<img src="Assets/Documents/mushroom_dance.gif" height="300" width="170"/>
-</p>
+  <div>
+  <img src="Assets/Documents/mushroom_bounce.gif" height="300" width="200" style="float: left; margin-right: 10px;" />
+  <img src="Assets/Documents/mushroom_dance.gif" height="300" width="170" style="float: left;" />
+  <div style="clear: both;"></div>
+</div>
 
 ## Unity Asset Store
 - 3D Gamekit - Environment Pack
