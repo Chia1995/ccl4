@@ -61,6 +61,7 @@ This game is an infinite runner where the player navigates forward across a seri
 
 
 # 3. Motivation
+Don’t Die High is a 3D endless runner where the player races along a colorful rainbow road through a psychedelic world. The aim is to survive and achieve a high score by collecting coins and hearts to restore lives. The player must avoid poisonous mushrooms and jump over walls — because each mistake costs a life. When a life is lost, Death begins to chase the player, adding tension. As the player runs, Death gradually falls behind and disappears — until the next mistake. Our motivation was to blend vibrant visuals, fast-paced action, and a subtle message: don’t overdo it.
 
 # 4. 3D Modeling and Animation
 
