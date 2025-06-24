@@ -47,7 +47,7 @@ This game is an infinite runner where the player navigates forward across a seri
 
 - Collecting a **coin** increases the score by **+1**.
 - Hitting an obstacle deducts **−20 points** from the current score.
-- If the score becomes **less than 0**, it’s **game over**.
+- If the score becomes **less than 0**, it's **game over**.
 - The player's movement speed increases slightly as the score increases, making the game harder over time.
 
 ---
@@ -61,7 +61,7 @@ This game is an infinite runner where the player navigates forward across a seri
 
 
 # 3. Motivation
-Don’t Die High is a 3D endless runner where the player races along a colorful rainbow road through a psychedelic world. The aim is to survive and achieve a high score by collecting coins and hearts to restore lives. The player must avoid poisonous mushrooms and jump over walls — because each mistake costs a life. When a life is lost, Death begins to chase the player, adding tension. As the player runs, Death gradually falls behind and disappears — until the next mistake. Our motivation was to blend vibrant visuals, fast-paced action, and a subtle message: don’t overdo it.
+Don't Die High is a 3D endless runner where the player races along a colorful rainbow road through a psychedelic world. The aim is to survive and achieve a high score by collecting coins and hearts to restore lives. The player must avoid poisonous mushrooms and jump over walls — because each mistake costs a life. When a life is lost, Death begins to chase the player, adding tension. As the player runs, Death gradually falls behind and disappears — until the next mistake. Our motivation was to blend vibrant visuals, fast-paced action, and a subtle message: don't overdo it.
 
 # 4. 3D Modeling and Animation
 
@@ -115,6 +115,16 @@ Don’t Die High is a 3D endless runner where the player races along a colorful 
 ## Scenes
 
 # 5. Game Audio
+
+This project uses **Audiokinetic Wwise** as the audio middleware, integrated with Unity, to provide advanced sound design and music management. Wwise enables flexible handling of soundbanks, events, and real-time audio control for both sound effects and music.
+
+### Audio Workflow Summary
+- **Wwise Integration:** Audio assets and events are managed in the Wwise Authoring Application and imported into Unity. Soundbanks are generated for each platform and kept in `ccl4_WwiseProject/GeneratedSoundBanks/`.
+- **Triggering Sounds:** Sounds are triggered in Unity either by attaching Wwise components (such as `AkEvent`, `AkAmbient`, `AkAudioListener`, `AkGameObj`) to GameObjects, or by calling Wwise events from scripts using `AkSoundEngine.PostEvent("EventName", gameObject);`.
+- **Adding/Modifying Audio:** To add or change sounds, import new audio files into the Wwise project, create or update events, regenerate soundbanks, and assign events in Unity as needed.
+- **Music & Ambience:** Background music and ambience are managed through Wwise Music Segments and States, allowing for dynamic and interactive audio.
+
+For a full guide to the audio pipeline, Wwise integration, and step-by-step instructions for adding or modifying sounds, **see [`AUDIO_IMPLEMENTATION.md`](AUDIO_IMPLEMENTATION.md)** in the project root.
 
 # 6. System Design
 
@@ -192,7 +202,7 @@ This Unity game features a modular design with distinct systems for player contr
 ### Architecture Highlights
 - Component-based and modular for easy maintenance and extension.
 - Procedural environment with tile-based spawning and destruction.
-- Input handled via Unity’s Input System for smooth controls.
+- Input handled via Unity's Input System for smooth controls.
 - Power-ups and collectibles interact through collision triggers.
 - Simple enemy AI focused on pursuit and capture logic.
 
@@ -201,7 +211,7 @@ This structure supports scalable, manageable gameplay mechanics and smooth playe
 
 # 7. System Infrastructure
 
-The diagram below illustrates the core structure and class relationships within the game. It demonstrates how key components—such as the `GameManager`, player movement, collectibles, UI elements, and power-ups—are built on top of Unity’s `MonoBehaviour` and interact with each other during runtime.
+The diagram below illustrates the core structure and class relationships within the game. It demonstrates how key components—such as the `GameManager`, player movement, collectibles, UI elements, and power-ups—are built on top of Unity's `MonoBehaviour` and interact with each other during runtime.
 
 ![Class Diagram](Assets/Documents/ClassDiagram/includeDiagram.png)
 
