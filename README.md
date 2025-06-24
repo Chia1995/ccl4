@@ -121,16 +121,16 @@ Don't Die High is a 3D endless runner where the player races along a colorful ra
 
 - Obstacles
 
-- Mushroom
-     <div>
+- Mushroom  
+<div style="margin-left: 0;">
   <img src="Assets/Documents/mushroom_front.png" height="200" width="200" style="float: left; margin-right: 10px;" />
   <img src="Assets/Documents/mushroom_side.png" height="200" width="200" style="float: left;" />
   <div style="clear: both;"></div>
 </div>
 
 - Animation Idle
-
-  <div>
+  
+<div style="margin-left: 0;">
   <img src="Assets/Documents/mushroom_bounce.gif" height="200" width="200" style="float: left; margin-right: 10px;" />
   <img src="Assets/Documents/mushroom_dance.gif" height="200" width="200" style="float: left;" />
   <div style="clear: both;"></div>
