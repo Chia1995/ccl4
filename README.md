@@ -103,7 +103,7 @@ Don't Die High is a 3D endless runner where the player races along a colorful ra
 </p>
 
 - Environment
-    - Road (Image)
+  
     - Flower
       <p float="left">
   <img src="Assets/Documents/flower.png" height="100" width="200"/>
